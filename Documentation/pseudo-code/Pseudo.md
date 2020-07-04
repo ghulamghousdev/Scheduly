@@ -49,6 +49,7 @@
 
 ## Generate-Time-Table(instances, givenSlots, classes, teachers){
 
+```
     let i, j, k, numOfDays = 0
     for (i = 1 to givenSlots.length){
         if givenSlots[i] > 0
@@ -158,11 +159,13 @@
     	if notPossible is true then make it false
     	if impossible is true then return("Could not generate in this case, please refresh/restart")
     return TT
+```
 
 }
 
 ## ranD (slots, count) {
 
+```
     let i, viableDays, slot
     for i in slots
     	if slots[i].length >= count
@@ -180,5 +183,6 @@
     	slots[day].splice(s,1);
     	return day, slot
     }
+```
 
 }
