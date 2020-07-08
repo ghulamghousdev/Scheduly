@@ -1,55 +1,11 @@
-# Pseudo Code for Time Table Generator
+# Time Complexity Analysis of Pseudo Code 
 
-# Input:
-
-    In this algorithm we will be giving following input to get desired results.
-
-## instances:
-
-            Data Structure which stores info about provided slots to be organized i.e
-            [[Ti, Ci, Si, LTi, Li],......,[Tn, Cn, Sn, LTn, Ln]]
-            Here
-                T = Teacher
-                C = Class
-                S = Subject
-                LT = noOfLectures
-                L = Labs
-                ins = which keeps record of lecture assigned & will be added in the generate function according to number of slots given
-
-## givenSlots:
-
-            Data structure which stores info about GivenSlots on each day i.e
-            [3,4,5,3,2]
-
-## classes:
-
-            Data structure which stores info about Classes(classes) i.e
-            ["A", "B"]
-
-## teachers:
-
-            Data structure which stores info about Teachers i.e
-            ["T1", "T2"]
-
-# Variables used in the algorithm
-
-- sectionInstances: data structure to store info about each section
-- TT: data structure which is initialized with all given slots with 0 and further on the variable containing info about lecture replaces zero which is decided and given that specific slot
-
-- teacherTT: it stores info about each teacher and the slot which he is assigned a lecture
-- numOfDays: it stores total working days;
-
-### Flags & Counters to keep track of clashes
-
-- regenerateTimeTableCountSec
-- regenerateTimeTableFlagSec: flag to check if there comes any clash
-- regenerateTimeTableListSec: Keeps record of input which causes clash
-- timeTableNotPossibleCount: keeps count of how many time time table generation fails on specific input
-- impossible: it says that it is impossible to generate time table with given data
+    We will analyze line by line and at the end will get sum of all the costs.
 
 ## Generate-Time-Table(instances, givenSlots, classes, teachers){
 
 ```
+    //We will use these variables to make our analysis easier to understand
     givenSlots = m
     noOfDays = d
     classes = c
@@ -215,6 +171,9 @@ In the above block we have calculated the running costs for each line and now we
 After further simplifying these numbers, we have
 
 2d(c^2)m + 10d(c^2) + 6nc + 7(c^2) + 19c + 12d + 19
+
+Now we will choose the polynomial of highest order and after  droping the coeficients we will get the desired time complexity for our algorithm which is 
+- O(d(c^2)m)
 
 
 
