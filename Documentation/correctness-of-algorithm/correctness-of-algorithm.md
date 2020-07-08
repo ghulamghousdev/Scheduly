@@ -69,3 +69,35 @@
     Sections = ["A", "B", "C"]
   
   Let's say at k=0 we have 
+  
+     TT = [[[0,0,0] , [0,0,0] , [0,0] , [0,0,0] , [0,0]],   //0th index nested array represents Section A time table
+           [[0,0,0] , [0,0,0] , [0,0] , [0,0,0] , [0,0]],   //1th index nested array represents Section B time table
+           [[0,0,0] , [0,0,0] , [0,0] , [0,0,0] , [0,0]]]   //2th index nested array represents Section C time table
+ 
+ Now after dry running our code for k=1 we sould have time table generated for section[k],
+ 
+     TT = TT = [[[[0,0,["Awais Hasan", "A", "DBMS"]] , [0,0,0] , [0,["Samyan", "A", "AOA"]] , [0,["Samyan", "A", "AOA"],["Awais Hasan", "A", "DBMS"]] , 
+          [["Awais Hasan", "A",    "DBMS"],["Samyan", "A", "AOA"]]],   //0th index nested array represents Section A time table
+           [[0,0,0] , [0,0,0] , [0,0] , [0,0,0] , [0,0]],   //1th index nested array represents Section B time table
+           [[0,0,0] , [0,0,0] , [0,0] , [0,0,0] , [0,0]]]   //2th index nested array represents Section C time table
+ 
+ In k=2th iteration we should have time table for section[k-1] as well as for section[k]
+ 
+     TT = [[[[0,0,["Awais Hasan", "A", "DBMS"]] , [0,0,0] , [0,["Samyan", "A", "AOA"]] , [0,["Samyan", "A", "AOA"],["Awais Hasan", "A", "DBMS"]] , 
+          [["Awais Hasan", "A",    "DBMS"],["Samyan", "A", "AOA"]]],   //0th index nested array represents Section A time table
+          [[["Awais Hasan", "B",    "DBMS"],["Samyan", "B", "AOA"],0] , [0,["Samyan", "B", "AOA"],["Awais Hasan", "B",    "DBMS"]] , [["Awais Hasan", "B",    "DBMS"],0] ,               [["Samyan", "B", "AOA"],0,0] , [0,0]],   //1th index nested array represents Section B time table
+          [[0,0,0] , [0,0,0] , [0,0] , [0,0,0] , [0,0]]]   //2th index nested array represents Section C time table
+          
+ In k=3rd iteration we should have time table for section[k] as well as for  section[k-1] and section[k-2]:
+
+     TT = [[[[0,0,["Awais Hasan", "A", "DBMS"]] , [0,0,0] , [0,["Samyan", "A", "AOA"]] , [0,["Samyan", "A", "AOA"],["Awais Hasan", "A", "DBMS"]] , 
+          [["Awais Hasan", "A",    "DBMS"],["Samyan", "A", "AOA"]]],   //0th index nested array represents Section A time table
+          [[["Awais Hasan", "B",    "DBMS"],["Samyan", "B", "AOA"],0] , [0,["Samyan", "B", "AOA"],["Awais Hasan", "B",    "DBMS"]] , [["Awais Hasan", "B",    "DBMS"],0] ,               [["Samyan", "B", "AOA"],0,0] , [0,0]],   //1th index nested array represents Section B time table
+          [[["Samyan", "C", "AOA"],["Awais Hasan", "C",    "DBMS"],0] , [0,0,0] , [0,["Awais Hasan", "C",    "DBMS"]] , [["Awais Hasan", "C",    "DBMS"],0,
+          ["Samyan", "C",    "AOA"]] , [["Samyan", "C", "AOA"],0]]]   //2th index nested array represents Section C time table
+          
+ Now after k iterations we have a time table generated for all the sections in the section Array without any conflict.
+ 
+## Conclusion
+ 
+ It is proved that our algorithm provides us with a timetable for all the sections in section[] after kth iteration.
