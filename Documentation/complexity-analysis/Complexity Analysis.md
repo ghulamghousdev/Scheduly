@@ -207,4 +207,14 @@
 
 ## Time Complexity Calculations
 
-    In the above block we have calculated the running costs
+In the above block we have calculated the running costs for each line and now we will sum all the costs for every line to find the total complexity of algorithm.
+
+1 + d+1 + d + d c+1 nc+c + (n)(c)+nc + nc + nc + nc + 1 + 1 + 1 + c+1 + c+c+c + c + c + c + c + c + cc+c + cc + dcc+cc + dcc + dccm+dcc + dccm + cc + cc + dcc+cc + dcc + dcc+dcc + dcc + dcc+dcc + cc+cc + c + c + c c+c + c+c +
+1+1+1 + d+1 + d + d + 1+1 + 1 + 1 + 1 + 1 + d+1 + d + d + d + d + d + 1
+
+After further simplifying these numbers, we have
+
+2d(c^2)m + 10d(c^2) + 6nc + 7(c^2) + 19c + 12d + 19
+
+
+
