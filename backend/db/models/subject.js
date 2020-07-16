@@ -1,8 +1,4 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-
 //Defining the subject schema for Subject Model
 const subjectSchema = mongoose.Schema({
   //Defining the subject code on Subject Schema
