@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+
+
 //Defining the subject schema for Subject Model
 const subjectSchema = mongoose.Schema({
   //Defining the subject code on Subject Schema
@@ -6,9 +8,9 @@ const subjectSchema = mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    unique: [true, "Subject code is already taken"],
-    minLength: 5,
-    maxLength: 5
+    unique: [true, "This Code is already taken"],
+    minlength: 5,
+    maxlength: 5
   },
 
   //Defining the subject name on Subject Schema
@@ -24,10 +26,10 @@ const subjectSchema = mongoose.Schema({
     required: true,
     validate(value) {
       if (value < 0) {
-        throw new error("Credit hours can not be negative");
+        throw new Error("Credit hours can not be negative");
       }
       if (value > 3) {
-        throw new error("Credit hours cannot be more then 3");
+        throw new Error("Credit hours cannot be more then 3");
       }
     },
   },
