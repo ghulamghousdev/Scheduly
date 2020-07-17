@@ -8,10 +8,11 @@ const subjectSchema = mongoose.Schema({
     trim: true,
     unique: [true, "Subject code is already taken"],
     minLength: 5,
+    maxLength: 5
   },
 
   //Defining the subject name on Subject Schema
-  firstName: {
+  subjectName: {
     type: String,
     required: true,
     trim: true,
