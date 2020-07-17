@@ -33,7 +33,6 @@ router.get('/api/subjects', auth, async (req, res)=>{
 router.get('/api/subject/:id', auth, async (req, res)=>{
     const _id = req.params.id;
     try {
-        console.log(req.params.id);
         const subject = await Subject.findOne({_id, author: req.user._id});
         if (!subject) {
             return res.status(404).send();
@@ -51,12 +50,23 @@ router.patch('/api/subject/:id', auth, async (req, res)=>{
 
 //DELETE ALL SUBJECTS
 router.delete('/api/subjects', auth, async (req, res)=>{
-
+    try{
+        await Subject.deleteMany({author: req.user._id});
+        res.status(200).send();
+    } catch(err){
+        res.status(400).send(err);
+    }
 })
 
 //DELETE A SUBJECT BY SPECIFYING ITS ID
 router.delete('/api/subject/:id', auth, async(req,res)=>{
-    
+    const _id = req.params.id;
+    try{
+        await Subject.deleteOne({_id, author: req.user._id});
+        res.status(200).send();
+    } catch(err){
+        res.status(400).send(err);
+    }
 })
 
 //EXPORTING THE ROUTER TO BE USED IN OTHER FILES
