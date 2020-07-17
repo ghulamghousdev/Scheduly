@@ -37,13 +37,44 @@ router.get("/api/class/:id", auth, async (req, res) => {
 });
 
 //EDIT A CLASS BY SPECIFYING ITS _id
-router.patch("/api/class/:id", auth, async (req, res) => {});
+router.patch("/api/class/:id", auth, async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ["className", "section", "session"];
+  const isAllowedUpdates = updates.every((curUpdate) =>
+    allowedUpdates.includes(curUpdate)
+  );
+  if (!isAllowedUpdates) {
+    res.send("Wrong update attempt");
+  }
+  try {
+    updates.forEach((update) => (req.class[update] = req.body[update]));
+    await req.class.save();
+    res.status(200).send(req.class);
+  } catch (error) {
+    res.send(error);
+  }
+});
 
 //DELETE ALL CLASS
-router.delete("/api/class", auth, async (req, res) => {});
+router.delete("/api/class", auth, async (req, res) => {
+  try {
+    await Section.deleteMany({ author: req.user._id });
+    res.status(200).send();
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
 
 //DELETE A CLASS BY SPECIFYING ITS ID
-router.delete("/api/class/:id", auth, async (req, res) => {});
+router.delete("/api/class/:id", auth, async (req, res) => {
+  const _id = req.params.id;
+  try {
+    await Section.deleteOne({ _id, author: req.user._id });
+    res.status(200).send();
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
 
 //EXPORTING THE ROUTER TO BE USED IN OTHER FILES
 module.exports = router;
