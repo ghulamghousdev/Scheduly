@@ -23,6 +23,13 @@ const classSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
+
+  //Defining a relationship between user and Class
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User'
+  }
 });
 
 const Class = mongoose.model("Class", classSchema);
