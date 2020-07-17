@@ -19,6 +19,16 @@ router.post("/api/class", auth, async (req, res) => {
   }
 });
 
+//GET ALL THE CLASSES
+router.get("/api/class", auth, async (req, res) => {
+  try {
+    await req.user.populate("class").execPopulate();
+    res.status(201).send(req.user.class);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 //GET A CLASS BY SPECIFYING ITS _id
 router.get("/api/class/:id", auth, async (req, res) => {
   const _id = req.params.id;
@@ -47,8 +57,8 @@ router.patch("/api/class/:id", auth, async (req, res) => {
     res.send("Wrong update attempt");
   }
   try {
-    updates.forEach((update) => (req.class[update] = req.body[update]));
-    await req.class.save();
+    updates.forEach((update) => (req.user.class[update] = req.body[update]));
+    await req.user.class.save();
     res.status(200).send(req.class);
   } catch (error) {
     res.send(error);
