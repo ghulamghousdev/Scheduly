@@ -5,11 +5,13 @@ require("./db/mongoose");
 const userRouter = require("./routes/user");
 const subjectRouter = require("./routes/subject");
 const classRouter = require("./routes/class");
+const teacherRouter = require("./routes/teacher");
 
 app.use(express.json());
 app.use(userRouter);
-app.use(subjectRouter);
+app.use(teacherRouter);
 app.use(classRouter);
+app.use(subjectRouter);
 
 // PORT
 const port = process.env.PORT || 3000;
