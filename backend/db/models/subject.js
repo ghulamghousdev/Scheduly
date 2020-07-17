@@ -47,6 +47,13 @@ const subjectSchema = mongoose.Schema({
       }
     },
   },
+
+  //DEFINING A FOREIGN RELATIONSHIP WITH USER
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User'
+  }
 });
 
 const Subject = mongoose.model("Subject", subjectSchema);
