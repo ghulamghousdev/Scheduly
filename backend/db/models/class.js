@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 //Defining the class schema for class Model
 const classSchema = mongoose.Schema({
-  //Defining the Class ID property on class Schema
+  //Defining the Class Name property on class Schema
   className: {
     type: String,
     required: true,
@@ -28,10 +28,10 @@ const classSchema = mongoose.Schema({
   author: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User'
-  }
+    ref: "User",
+  },
 });
 
-const Class = mongoose.model("Class", classSchema);
+const Section = mongoose.model("Section", classSchema);
 
-module.exports = Class;
+module.exports = Section;
