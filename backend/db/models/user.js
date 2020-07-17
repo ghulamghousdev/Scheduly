@@ -63,17 +63,23 @@ const userSchema = mongoose.Schema({
   ],
 });
 
-userSchema.virtual('classes', {
-  ref: 'Class',
-  localField: '_id',
-  foreignField: 'author'
-})
+userSchema.virtual("class", {
+  ref: "Class",
+  localField: "_id",
+  foreignField: "author",
+});
 
-userSchema.virtual('subjects', {
-  ref: 'Subject',
-  localField: '_id',
-  foreignField: 'author'
-})
+userSchema.virtual("subjects", {
+  ref: "Subject",
+  localField: "_id",
+  foreignField: "author",
+});
+
+userSchema.virtual("teacher", {
+  ref: "Teacher",
+  localField: "_id",
+  foreignField: "author",
+});
 
 //GENERATING AUTHORIZATION TOKEN AND STORING IT IN TOKENS PROPERTY OF USER OBJECT
 userSchema.methods.generateAuthToken = async function () {
