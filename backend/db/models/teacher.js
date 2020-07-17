@@ -44,6 +44,19 @@ const teacherSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
+  //DEFINING A FOREIGN RELATIONSHIP WITH USER
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
+  },
+
+  //DEFINING A FOREIGN RELATIONSHIP WITH SUBJECT
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Subjects",
+  },
 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);
