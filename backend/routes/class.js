@@ -1,0 +1,49 @@
+const express = require("express");
+const auth = require("../middlewares/auth");
+const Section = require("../db/models/class");
+
+const router = express.Router();
+
+//TO ADD A NEW SECTION
+router.post("/api/class", auth, async (req, res) => {
+  const section = new Section({
+    ...req.body,
+    author: req.user._id,
+  });
+
+  try {
+    await section.save();
+    res.status(200).send(section);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+//GET A CLASS BY SPECIFYING ITS _id
+router.get("/api/class/:id", auth, async (req, res) => {
+  const _id = req.params.id;
+  try {
+    const section = await Section.findOne({
+      _id,
+      author: req.user._id,
+    });
+    if (!section) {
+      return res.status(404).send();
+    }
+    res.send(subject);
+  } catch (error) {
+    res.status(502).send();
+  }
+});
+
+//EDIT A CLASS BY SPECIFYING ITS _id
+router.patch("/api/class/:id", auth, async (req, res) => {});
+
+//DELETE ALL CLASS
+router.delete("/api/class", auth, async (req, res) => {});
+
+//DELETE A CLASS BY SPECIFYING ITS ID
+router.delete("/api/class/:id", auth, async (req, res) => {});
+
+//EXPORTING THE ROUTER TO BE USED IN OTHER FILES
+module.exports = router;
