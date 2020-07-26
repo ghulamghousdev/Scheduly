@@ -1,0 +1,21 @@
+.fp-container{
+    height: 100vh;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.col-1{
+    background-image: url('../blue-background.jpg');
+    background-size: cover;
+    padding: 0px 100px;
+    position: relative;
+}
+
+.login-image{
+    width: 70%; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
