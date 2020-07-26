@@ -28,7 +28,7 @@ const teacherSchema = mongoose.Schema({
   workingHours: {
     type: String,
     required: true,
-    trim: tue,
+    trim: true,
     validate(value) {
       if (value < 0) {
         throw new Error("Working hours cannot be a negative number");
