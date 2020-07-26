@@ -1,0 +1,21 @@
+.buttonbox{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    
+    &__button{
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: 500;
+        padding: 15px 30px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+
+        &--active{
+            background-color: #ffffff;
+            color: #4EB6CE;
+        }
+    }
+}
