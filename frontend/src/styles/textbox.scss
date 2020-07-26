@@ -1,0 +1,20 @@
+.textbox{
+    margin-top: 100px;
+
+    &__preheading{
+        color: #4EB6CE;
+        font-size: 24px;
+    }
+
+    &__heading{
+        font-size: 60px;
+        color: #ffffff;
+    }
+
+    &__text{
+        font-size: 16px;
+        color: #ffffff;
+        margin-right: 40%;
+        line-height: 1.6em;
+    }
+}
