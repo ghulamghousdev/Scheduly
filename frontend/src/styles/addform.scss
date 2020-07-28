@@ -1,0 +1,55 @@
+.addform{
+    width: 40%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &__heading{
+        font-size: 50px;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    &__input{
+        padding: 15px;
+        border-radius: 50px;
+        outline: none;
+        border: 1px solid #cfcfcf;
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        &--full{
+            width: 100%;
+        }
+
+        &--half{
+            width: 49%;
+        }
+
+        &--left{
+            margin-right: 1%;
+        }
+
+        &--right{
+            margin-left: 1%;
+        }
+    }
+
+    &__btn{
+        width: 100%;
+        padding: 15px;
+        border-radius: 50px;
+        background-color: #08ACDD;
+        border: none;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color .3s;
+
+        &:hover{
+            background-color: #18596d;
+        }
+    }
+}
