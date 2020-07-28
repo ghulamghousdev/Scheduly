@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch, Link, NavLink, useParams, useRouteMatch} from "react-router-dom";
 import AddClass from "./addClass";
+import AddSubject from "./addSubject";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -51,6 +52,9 @@ function Dashboard(){
                 <div className="component-container">
                     <Route path={`${url}/classes/add`}>
                         <AddClass />
+                    </Route>
+                    <Route path={`${url}/subjects/add`}>
+                        <AddSubject />
                     </Route>
                 </div>
             </div>
