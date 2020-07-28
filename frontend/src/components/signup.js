@@ -10,7 +10,8 @@ class SignUp extends React.Component {
     handleFormSubmit = async e =>{
         e.preventDefault();
         const email = e.target.elements.email.value;
-        const userName = e.target.elements.username.value;
+        const firstName = e.target.elements.firstname.value;
+        const lastName = e.target.elements.lastname.value;
         const password = e.target.elements.password.value;
         const confirmedPassword = e.target.elements.confirm.value;
 
@@ -18,12 +19,11 @@ class SignUp extends React.Component {
             console.log("Passwords do not match");
         } else{
             const newUser = {
-                firstName: userName,
-                lastName:userName,
+                firstName,
+                lastName,
                 email,
                 password
             }
-            console.log(newUser);
 
             try{
                 const config = {
@@ -46,15 +46,21 @@ class SignUp extends React.Component {
             <h3 className="form__heading">SIGNUP</h3>
             <input 
               className="form__input" 
-              placeholder="Email Address" 
-              type="email" 
-              name="email"
+              placeholder="First Name" 
+              type="text" 
+              name="firstname"
             />
             <input 
               className="form__input" 
-              placeholder="Username" 
+              placeholder="Last Name" 
               type="text" 
-              name="username"
+              name="lastname"
+            />
+            <input 
+              className="form__input" 
+              placeholder="Email Address" 
+              type="email" 
+              name="email"
             />
             <input 
               className="form__input" 
