@@ -11,7 +11,6 @@ import Graduate from '../graduate-illustration.png';
 function UserCredentials() {
     let { path, url } = useRouteMatch();
     return (
-      <BrowserRouter>
       <div className="fp-container">
         <div className="row fw-row col-2-2-1">
           <div className="col-1">
@@ -62,7 +61,6 @@ function UserCredentials() {
           </div>
         </div>
       </div>
-      </BrowserRouter>
     );
   }
   
