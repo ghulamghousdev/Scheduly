@@ -99,3 +99,14 @@
         }
     }
 }
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.component-container{
+    flex: 1;
+    position: relative;
+}
