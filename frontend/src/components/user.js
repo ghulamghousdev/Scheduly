@@ -1,8 +1,8 @@
 import React from "react";
 import {BrowserRouter, Route, Switch, Link, NavLink, useParams, useRouteMatch} from "react-router-dom";
-import TextBox from './textbox';
-import SignUp from './signup';
-import Login from './login';
+import TextBox from './Textbox';
+import SignUp from './Signup';
+import Login from './Login';
 import '../styles/buttonbox.scss';
 import '../styles/user.scss';
 import Clock from '../clock-illustration.png';
