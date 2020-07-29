@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter, Route, Switch, Link, NavLink, useParams, useRouteMatch} from "react-router-dom";
 import AddClass from "./addClass";
 import AddSubject from "./addSubject";
+import AddTeacher from "./addTeacher";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -50,12 +51,17 @@ function Dashboard(){
                     </ul>
                 </div>
                 <div className="component-container">
-                    <Route path={`${url}/classes/add`}>
-                        <AddClass />
-                    </Route>
-                    <Route path={`${url}/subjects/add`}>
-                        <AddSubject />
-                    </Route>
+                    <Switch>
+                        <Route path={`${url}/classes/add`}>
+                            <AddClass />
+                        </Route>
+                        <Route path={`${url}/subjects/add`}>
+                            <AddSubject />
+                        </Route>
+                        <Route path={`${url}/teachers/add`}>
+                            <AddTeacher />
+                        </Route>
+                    </Switch>
                 </div>
             </div>
         </div>
