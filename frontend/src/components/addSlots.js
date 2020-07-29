@@ -24,8 +24,28 @@ class AddSlots extends React.Component {
             placeholder="Subject Name"
             name="subjectName"
           />
+          <input
+            className="addform__input addform__input--half addform__input--left"
+            type="text"
+            placeholder="Section"
+            name="section"
+          />
+          <input
+            className="addform__input addform__input--half addform__input--right"
+            type="number"
+            placeholder="Lectures"
+            name="contactHours"
+          />
+          <input
+            className="addform__btn"
+            type="submit"
+            name="submit"
+            value="ADD SLOTS"
+          />
         </form>
       </div>
     );
   }
 }
+
+export default AddSlots;
