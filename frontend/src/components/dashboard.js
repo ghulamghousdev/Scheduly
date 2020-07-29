@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch, Link, NavLink, useParams, useRouteMatch} f
 import AddClass from "./AddClass";
 import AddSubject from "./AddSubject";
 import AddTeacher from "./AddTeacher";
-import Classes from './Classes';
+import ClassList from './ClassList';
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -63,7 +63,7 @@ function Dashboard(){
                             <AddTeacher />
                         </Route>
                         <Route path={`${url}/classes/view`}>
-                            <Classes className="N-7" session="2018" section="A" />
+                            <ClassList className="N-7" session="2018" section="A" />
                         </Route>
                     </Switch>
                 </div>
