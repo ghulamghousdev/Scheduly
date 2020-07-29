@@ -39,7 +39,7 @@
 
     &__btn{
         width: 100%;
-        padding: 15px;
+        height: 53px;
         border-radius: 50px;
         background-color: #08ACDD;
         border: none;
@@ -52,4 +52,31 @@
             background-color: #18596d;
         }
     }
+
+    &__select{
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #cfcfcf;
+        font-size: 16px;
+        outline: none;
+        border-radius: 50px;
+        color: #555555;
+        margin-bottom: 15px;
+    }
+
+    &__dropdown{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-column-gap: 10px;
+    }
+
+    &__selectedOptions{
+        width: 100%;
+        padding: 15px;
+        background-color: #08ACDD;
+        color: #ffffff;
+        border-radius: 50px;
+        margin-bottom: 10px;
+    }
+
 }
