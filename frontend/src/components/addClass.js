@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Class from './Class';
 import "../styles/addform.scss";
 
 class AddClass extends React.Component {
