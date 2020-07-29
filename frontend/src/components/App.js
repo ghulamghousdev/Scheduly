@@ -1,8 +1,7 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch, Link, NavLink} from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 import UserCredentials from "./User";
 import Dashboard from "./Dashboard";
-
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
           <UserCredentials />
         </Route>
         <Route path="/dashboard">
-          <Dashboard/>
+          <Dashboard />
         </Route>
       </Switch>
     </BrowserRouter>
