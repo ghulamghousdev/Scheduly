@@ -22,6 +22,27 @@ const addSlotsSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
+
+  //Defining number of contact hours property on ADD SLOTS Schema
+  contactHours: {
+    type: String,
+    required: true,
+    trim: true,
+    validate(value) {
+      if (value < 0) {
+        throw new Error("Contact hours can not be negative");
+      }
+      if (value > 3) {
+        throw new Error("Contact hours cannot be more then 3");
+      }
+    },
+  },
+  //Defining the relationship with the user
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
+  },
 });
 
 const AddSlots = mongoose.model("AddSlots", addSlotsSchema);
