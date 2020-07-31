@@ -14,6 +14,7 @@ import AddTeacher from "./AddTeacher";
 import AddSlots from "./AddSlots";
 import ClassList from "./ClassList";
 import SubjectList from "./SubjectList";
+import TeacherList from "./TeacherList";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -96,6 +97,15 @@ function Dashboard() {
                   creditHours="3"
                   contactHours="3"
                   labs="1"
+                />
+              </Route>
+              <Route path={`${url}/teachers/view`}>
+                <TeacherList
+                  regNumber="CS30"
+                  firstName="Awais"
+                  lastName="Hasan"
+                  workingHours="12"
+                  subjectName="['OOD', 'DBMS']"
                 />
               </Route>
             </Switch>
