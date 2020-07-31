@@ -1,0 +1,14 @@
+.viewbox {
+  width: 56%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &__heading {
+    font-size: 50px;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+}
