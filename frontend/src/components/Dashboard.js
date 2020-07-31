@@ -11,8 +11,9 @@ import {
 import AddClass from "./AddClass";
 import AddSubject from "./AddSubject";
 import AddTeacher from "./AddTeacher";
-import ClassList from "./ClassList";
 import AddSlots from "./AddSlots";
+import ClassList from "./ClassList";
+import SubjectList from "./SubjectList";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -87,6 +88,15 @@ function Dashboard() {
               </Route>
               <Route path={`${url}/classes/view`}>
                 <ClassList className="N-7" session="2018" section="A" />
+              </Route>
+              <Route path={`${url}/subjects/view`}>
+                <SubjectList
+                  subjectCode="CS311"
+                  subjectName="Operating System"
+                  creditHours="3"
+                  contactHours="3"
+                  labs="1"
+                />
               </Route>
             </Switch>
           </div>
