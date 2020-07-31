@@ -1,6 +1,6 @@
 const express = require("express");
 const auth = require("../middlewares/auth");
-const AddSlots = require("../db/models/slotsAllocated");
+const AddSlots = require("../db/models/addSlots");
 
 const router = express.Router();
 
