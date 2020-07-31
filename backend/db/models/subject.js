@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 //Defining the subject schema for Subject Model
 const subjectSchema = mongoose.Schema({
   //Defining the subject code on Subject Schema
@@ -10,7 +9,7 @@ const subjectSchema = mongoose.Schema({
     trim: true,
     unique: [true, "This Code is already taken"],
     minlength: 5,
-    maxlength: 5
+    maxlength: 5,
   },
 
   //Defining the subject name on Subject Schema
@@ -48,12 +47,18 @@ const subjectSchema = mongoose.Schema({
     },
   },
 
+  //Defining the no of labs on Subject Schema
+  labs: {
+    type: Number,
+    require: true,
+  },
+
   //DEFINING A FOREIGN RELATIONSHIP WITH USER
   author: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User'
-  }
+    ref: "User",
+  },
 });
 
 const Subject = mongoose.model("Subject", subjectSchema);
