@@ -25,6 +25,12 @@ class AddSlots extends React.Component {
             name="subjectName"
           />
           <input
+            className="addform__input addform__input--full"
+            type="number"
+            placeholder="Session"
+            name="session"
+          />
+          <input
             className="addform__input addform__input--half addform__input--left"
             type="text"
             placeholder="Section"
