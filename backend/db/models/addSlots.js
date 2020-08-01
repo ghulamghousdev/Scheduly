@@ -16,6 +16,13 @@ const addSlotsSchema = mongoose.Schema({
     trim: true,
   },
 
+  //Defining the session property on AD SLOTS Schema
+  session: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+
   //Defining the section property on ADD SLOTS Schema
   section: {
     type: String,
