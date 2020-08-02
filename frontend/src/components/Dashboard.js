@@ -15,6 +15,7 @@ import AddSlots from "./AddSlots";
 import ClassList from "./ClassList";
 import SubjectList from "./SubjectList";
 import TeacherList from "./TeacherList";
+import SlotList from "./SlotList";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -105,7 +106,17 @@ function Dashboard() {
                   firstName="Awais"
                   lastName="Hasan"
                   workingHours="12"
-                  subjectName="['OOD', 'DBMS']"
+                  subjectName="OOP"
+                />
+              </Route>
+              <Route path={`${url}/slots/view`}>
+                <SlotList
+                  slotID="1"
+                  teacherName="Samyan Wahla"
+                  subjectName="Algorithm Analysis"
+                  session="2018"
+                  section="A"
+                  noOfLectures="3"
                 />
               </Route>
             </Switch>
