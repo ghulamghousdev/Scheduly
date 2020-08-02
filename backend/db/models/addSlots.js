@@ -10,7 +10,7 @@ const addSlotsSchema = mongoose.Schema({
   },
 
   //Defining the subject property on ADD SLOTS Schema
-  subject: {
+  subjectName: {
     type: String,
     required: true,
     trim: true,
@@ -32,7 +32,7 @@ const addSlotsSchema = mongoose.Schema({
 
   //Defining number of contact hours property on ADD SLOTS Schema
   contactHours: {
-    type: String,
+    type: Number,
     required: true,
     trim: true,
     validate(value) {
@@ -49,6 +49,19 @@ const addSlotsSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "User",
+  },
+
+  //DEFINING A FOREIGN RELATIONSHIP WITH SUBJECT
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Subject",
+  },
+  //DEFINING A FOREIGN RELATIONSHIP WITH TEACHER
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Teacher",
   },
 });
 
