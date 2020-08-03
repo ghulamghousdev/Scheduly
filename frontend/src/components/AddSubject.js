@@ -38,6 +38,12 @@ class AddSubject extends React.Component {
             name="contactHours"
           />
           <input
+            className="addform__input  addform__input--full"
+            type="number"
+            placeholder="labs"
+            name="labs"
+          />
+          <input
             className="addform__btn"
             type="submit"
             name="submit"
