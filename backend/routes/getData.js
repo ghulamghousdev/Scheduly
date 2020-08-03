@@ -12,15 +12,15 @@ const subjectArray = [];
 const teacherArray = [];
 const slotsArray = [];
 const slotsObj = {};
-const lab = [];
 const givenSlots = [9, 9, 9, 9, 9];
+
 router.get("/api/fetchdata", auth, async (req, res) => {
   try {
     const sectionData = await Section.find({ author: req.user._id });
     const subjectData = await Subject.find({ author: req.user._id });
     const teacherData = await Teacher.find({ author: req.user._id });
     const slotsData = await Slots.find({ author: req.user._id });
-    await sectionData.forEach((cur) => {
+    sectionData.forEach((cur) => {
       sectionArray[cur] = sectionData[cur.section];
     });
     subjectData.forEach((cur) => {
@@ -55,3 +55,6 @@ router.get("/api/fetchdata", auth, async (req, res) => {
     res.status(400).send(err);
   }
 });
+
+//Exporting the router to b used in other files
+module.exports = router;
