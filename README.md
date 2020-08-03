@@ -37,7 +37,7 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 ## Technologies Used
 
 - MERN Stack
-- Bootstrap
+- SASS
 - React
 - Redux
 - MongoDB
@@ -56,8 +56,21 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 
 | Sr. No. | Technology | Version |
 | :------ | :--------: | :-----: |
-| 1.      |  MongoDB   |   4.4   |
+| 1.      |  MongoDB   |   3.6   |
 | 2.      |  Robo 3T   |   1.3   |
+
+### Programming Language and NPM Packages
+
+| Sr. No. |  Technology  | Version |
+| :------ | :----------: | :-----: |
+| 1.      |   React.js   | 16.13.1 |
+| 1.      |   Node.js    | 12.6.0  |
+| 1.      |  Node-SAAS   | 4.14.1  |
+| 1.      |   Nodemon    |  2.0.4  |
+| 1.      |  Express.js  |  4.17   |
+| 1.      |   Mongoose   | 5.9.27  |
+| 1.      |   bcryptjs   |  2.4.3  |
+| 1.      | jsonwebtoken |  8.5.1  |
 
 ## Found an Issue or any suggestions
 
