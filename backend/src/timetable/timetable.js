@@ -397,4 +397,4 @@ const generateTimeTable = async (
   return timeTable;
 };
 
-export default generateTimeTable;
+module.exports = generateTimeTable;
