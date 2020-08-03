@@ -3,7 +3,7 @@ const auth = require("../middlewares/auth");
 const Section = require("../db/models/class");
 const Subject = require("../db/models/subject");
 const Teacher = require("../db/models/teacher");
-const Slots = require("../db/models/addSlots");
+const Slots = require("../db/models/slots");
 const TimeTable = require("../src/timetable/timetable");
 const router = express.Router();
 
