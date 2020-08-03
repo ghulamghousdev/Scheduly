@@ -7,7 +7,7 @@ const router = express.Router();
 //To save one assigned class to a teacher
 router.post("/api/addSlots", auth, async (req, res) => {
   const addSlots = new AddSlots({
-    ...req.body(),
+    ...req.body,
     author: req.user._id,
   });
 
