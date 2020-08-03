@@ -64,13 +64,13 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 | Sr. No. |  Technology  | Version |
 | :------ | :----------: | :-----: |
 | 1.      |   React.js   | 16.13.1 |
-| 1.      |   Node.js    | 12.6.0  |
-| 1.      |  Node-SAAS   | 4.14.1  |
-| 1.      |   Nodemon    |  2.0.4  |
-| 1.      |  Express.js  |  4.17   |
-| 1.      |   Mongoose   | 5.9.27  |
-| 1.      |   bcryptjs   |  2.4.3  |
-| 1.      | jsonwebtoken |  8.5.1  |
+| 2.      |   Node.js    | 12.6.0  |
+| 3.      |  Node-SAAS   | 4.14.1  |
+| 4.      |   Nodemon    |  2.0.4  |
+| 5.      |  Express.js  |  4.17   |
+| 6.      |   Mongoose   | 5.9.27  |
+| 7.      |   bcryptjs   |  2.4.3  |
+| 8.      | jsonwebtoken |  8.5.1  |
 
 ## Found an Issue or any suggestions
 
