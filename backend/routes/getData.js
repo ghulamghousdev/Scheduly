@@ -7,9 +7,7 @@ const Slots = require("../db/models/addSlots");
 const TimeTable = require("../src/timetable/timetable");
 const router = express.Router();
 
-
 router.get("/api/fetchdata", auth, async (req, res) => {
-  
   let sectionArray = [];
   let subjectArray = [];
   let teacherArray = [];
@@ -23,35 +21,36 @@ router.get("/api/fetchdata", auth, async (req, res) => {
     let slotsData = await Slots.find({ author: req.user._id });
     //console.log(slotsData);
 
-   for( let i = 0; i< sectionData.length; i++){
-     sectionArray[i] = `${sectionData[i].session}-${sectionData[i].section}`; 
-   }
+    for (let i = 0; i < sectionData.length; i++) {
+      sectionArray[i] = `${sectionData[i].session}-${sectionData[i].section}`;
+    }
 
-    subjectData.forEach((cur) => {
-      subjectArray[cur] = subjectData[cur.subjectName];
-    });
+    for (let i = 0; i < subjectData.length; i++) {
+      subjectArray[i] = `${subjectData[i.subjectName]}`;
+    }
     //console.log(subjectArray);
 
-    teacherData.forEach((cur) => {
-      teacherArray[cur] = teacherData[cur.firstName + " " + cur.lastName];
-    });
+    for (let i = 0; i < teacherData.length; i++) {
+      teacherArray[i] = `${teacherData[i.firstName]} ${
+        teacherData[i.lastName]
+      }`;
+    }
     //console.log(teacherArray);
-    
-    slotsData.forEach((cur) => {
-      slotsObj.teacher = slotsData[cur.teacherName];
-      slotsObj.sections = [slotsData[cur.session]+"-"+slotsData[cur.section]];
-      slotsObj.subject = slotsData[cur.subjectName];
-      slotsObj.numLectures = slotsData[cur.contactHours];
+
+    for (let j = 0; j < slotsData.length; j++) {
+      slotsObj.teacher = `${slotsData[j.teacherName]}`;
+      slotsObj.sections = `[${slotsData[j.session]}-${slotsData[j.section]}]`;
+      slotsObj.subject = `${slotsData[j.subjectName]}`;
+      slotsObj.numLectures = `${slotsData[j.contactHours]}`;
       for (let i = 0; i < subjectData.length; i++) {
-        if (slotsData[cur.subjectName] === subjectData[i.subjectName]) {
-          slotsObj.labs = subjectData[i.labs];
+        if (`${slotsData[j.subjectName]}` === `${subjectData[i.subjectName]}`) {
+          slotsObj.labs = `${subjectData[i.labs]}`;
           break;
         }
       }
-      slotsArray[cur] = slotsObj;
-    });
+      slotsArray[j] = slotsObj;
+    }
     //console.log(slotsData);
-    
 
     const resultedTimeTable = TimeTable(
       slotsArray,
