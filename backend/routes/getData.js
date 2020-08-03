@@ -21,7 +21,7 @@ router.get("/api/fetchdata", auth, async (req, res) => {
     const teacherData = await Teacher.find({ author: req.user._id });
     const slotsData = await Slots.find({ author: req.user._id });
     sectionData.forEach((cur) => {
-      sectionArray[cur] = sectionData[cur.section];
+      sectionArray[cur] = [slotsData[cur.session]+"-"+slotsData[cur.section]];
     });
     subjectData.forEach((cur) => {
       subjectArray[cur] = subjectData[cur.subjectName];
