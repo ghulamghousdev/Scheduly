@@ -31,7 +31,7 @@ router.get("/api/fetchdata", auth, async (req, res) => {
     });
     slotsData.forEach((cur) => {
       slotsObj.teacher = slotsData[cur.teacherName];
-      slotsObj.sections = [slotsData[cur.section]];
+      slotsObj.sections = [slotsData[cur.session]+"-"+slotsData[cur.section]];
       slotsObj.subject = slotsData[cur.subjectName];
       slotsObj.numLectures = slotsData[cur.contactHours];
       for (let i = 0; i < subjectData.length; i++) {
