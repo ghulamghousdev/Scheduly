@@ -6,7 +6,7 @@ const userRouter = require("./routes/user");
 const subjectRouter = require("./routes/subject");
 const classRouter = require("./routes/class");
 const teacherRouter = require("./routes/teacher");
-const slotsRouter = require("./routes/addSlots");
+const slotsRouter = require("./routes/slots");
 const algoExecutionRouter = require("./routes/getData");
 
 app.use(express.json());
