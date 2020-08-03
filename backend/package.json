@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "mongod": "../../mongodb/bin/mongod.exe --dbpath=../../mongodb_data"
+    "mongod": "c:/Users/Ahmad/mongodb/bin/mongod.exe --dbpath c:/Users/Ahmad/mongodb-data"
   },
   "keywords": [],
   "author": "",
