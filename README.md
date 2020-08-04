@@ -43,8 +43,7 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 - MongoDB
 - Node.js
 - Express.js
-
-## Project Configuration
+## Technologies used in Project with the respective versions
 
 ### IDE
 
@@ -71,6 +70,28 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 | 6.      |   Mongoose   | 5.9.27  |
 | 7.      |   bcryptjs   |  2.4.3  |
 | 8.      | jsonwebtoken |  8.5.1  |
+
+## Prerequisits
+
+Following are the prerequisits to run this project locally on your machine. If you don't have these 
+prerequisits installed on your computer, run the following commands on your machine.
+
+- visual studio code
+You can install it from the following source by clicking on this [link.](https://code.visualstudio.com/download)
+- npm
+```
+npm install npm@latest -g
+```
+- node 
+```
+npm install node@latest -g
+```
+-
+
+## Guidelines for Project Configuration
+
+Step 1
+
 
 ## Found an Issue or any suggestions
 
