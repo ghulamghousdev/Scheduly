@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import auth from '../utils/auth';
 import '../styles/form.scss';
 
 
 class Login extends React.Component {
-    constructor(){
-        super();
-    }
     handleFormSubmit = async e =>{
         e.preventDefault();
         const email = e.target.elements.email.value;
@@ -24,8 +22,9 @@ class Login extends React.Component {
                 }
             }
             const body = JSON.stringify(credentials);
-            const res = await axios.post('/api/user/login', body, config)
-            console.log(res.data);
+            const res = await axios.post('/api/user/login', body, config);
+            auth.setAuthToken(res.data.token);
+            
         } catch(e){
             console.log(e);
         }
