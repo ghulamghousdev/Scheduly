@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import auth from "../utils/auth"
 import "../styles/addform.scss";
 
 class AddTeacher extends React.Component {
@@ -30,19 +31,49 @@ class AddTeacher extends React.Component {
     });
   }
 
+  async handleAddTeacher(e){
+    e.preventDefault();
+    const firstName = e.target.elements.firstName.value;
+    const lastName = e.target.elements.lastName.value;
+    const regNumber = e.target.elements.regNumber.value;
+    const workingHours = e.target.elements.workingHours.value;
+
+    const teacher = {
+      firstName,
+      lastName,
+      regNumber,
+      workingHours
+    }
+
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const body = JSON.stringify(teacher);
+      const res = await axios.post('/api/teacher', body, config);
+      console.log(res);
+    } catch(err){
+      console.log(err);
+    }
+  }
+
   render() {
     return (
       <div className="addform addteacher">
-        <form>
+        <form onSubmit={this.handleAddTeacher}>
           <h1 className="addform__heading">Add Teacher</h1>
           <input
-            className="addform__input addform__input--half addform__input--left"
+            className="addform__input addform__input--full"
             type="text"
             placeholder="First Name"
             name="firstName"
           />
           <input
-            className="addform__input  addform__input--half addform__input--right"
+            className="addform__input  addform__input--full"
             type="text"
             placeholder="Last Name"
             name="lastName"
@@ -60,25 +91,7 @@ class AddTeacher extends React.Component {
             name="workingHours"
           />
 
-          {this.state.selectedSubjects.map((cur) => (
-            <p className="addform__selectedOptions">{`${cur.subjectCode} | ${cur.subjectName}`}</p>
-          ))}
-          <div className="addform__dropdown">
-            <select name="subjects" id="subjects" className="addform__select">
-              {this.state.subjects.map((cur) => (
-                <option
-                  className="addform__option"
-                  value={cur.subjectCode}
-                >{`${cur.subjectCode} | ${cur.subjectName}`}</option>
-              ))}
-            </select>
-            <input
-              onClick={this.handleSelect}
-              className="addform__btn"
-              type="button"
-              value="SELECT"
-            />
-          </div>
+          
           <input
             className="addform__btn"
             type="submit"
