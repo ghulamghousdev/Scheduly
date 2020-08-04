@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import auth from '../utils/auth'
 import '../styles/form.scss';
 
 
@@ -33,7 +34,8 @@ class SignUp extends React.Component {
                 }
                 const body = JSON.stringify(newUser);
                 const res = await axios.post('/api/user', body, config);
-                console.log(res.data);
+                auth.setAuthToken(res.data.token);
+                
             } catch(e){
                 console.log(e);
             }
