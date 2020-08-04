@@ -43,6 +43,7 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 - MongoDB
 - Node.js
 - Express.js
+
 ## Technologies used in Project with the respective versions
 
 ### IDE
@@ -73,58 +74,91 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 
 ## Prerequisits
 
-Following are the prerequisits to run this project locally on your machine. If you don't have these 
+Following are the prerequisits to run this project locally on your machine. If you don't have these
 prerequisits installed on your computer, run the following commands on your machine.
 
 - **Git**
-    You can install it from this [link.](https://git-scm.com/download/win)
+  You can install it from this [link.](https://git-scm.com/download/win)
 
 - **Visual Studio Code**
-    You can install it from the following source by clicking on this [link.](https://code.visualstudio.com/download)
+  You can install it from the following source by clicking on this [link.](https://code.visualstudio.com/download)
 
 - **MongoDB**
-    There are two ways to install mongodb locally on your machine.
-        1. By downloading the .msi file, you simply have to run it on your machine and it will be 
-        installedby default on the local device containing operating system. [Click here to download.](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0-signed.msi)
-        2. By downloading the .zip file, you have to unzip the file and place it where you want to
-        and createa mongodb_data folder in the same directory. [Click here to download it](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0.zip)
+  There are two ways to install mongodb locally on your machine.
 
-- **Robo 3T**
-    It is a GUI for local mongodb database. You can download the community version and install it 
-    by [clicking here.](https://robomongo.org/download)
+  1. By downloading the .msi file, you simply have to run it on your machine and install it
+     on the following location on your
 
-- **Node**
-    To download and install the node on your machine [click here.](https://nodejs.org/en/download/)
+  ```
+  path = c/Users/{You user name}/.
+  ```
 
-- **Node Package Manager**
-    You can install node package manager by running the following command on power shell. 
-    ```
-        npm install npm@latest -g
-    ```
+  [Click here to download.](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0-signed.msi)
+
+  2. By downloading the .zip file, you have to unzip the file in the location provided by the path
+
+  ```
+  path = /cUsers/{You user name}/.
+  ```
+
+  And create a mongodb_data folder in the same directory. [Click here to download it](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0.zip)
+
+- **Robo 3T:**
+  It is a GUI for local mongodb database. You can download the community version and install it
+  by [clicking here.](https://robomongo.org/download)
+
+- **Node:**
+  To download and install the node on your machine [click here.](https://nodejs.org/en/download/)
+
+- **Node Package Manager:**
+  You can install node package manager by running the following command on power shell.
+  ```
+  npm install npm@latest -g
+  ```
 
 ## Guidelines for Project Configuration
 
-**Step 1. Clone the repo**
-    Open Git in the directory where you want to download it and run the following command.
-    ```
-        git clone https://github.com/ghulamghousdev/CS311S20PID32.git
-    ```
-    
-**Step 2. Open in Code Editor**
-    To open folder in Visual Studio Code, right click on the folder and click on open with 
-    Visual Studio Code.
+**Step 1. Clone the repo:**
+Open Git in the directory where you want to download it and run the following command.
 
-**Step 3. Backend Dev Dependencies**
-    To install all the development dependencies for backend, execute the following commands
-    the terminal.
-    ```
-        cd backend
-        npm install
-    ```
-**Step 5. Run Database**
-**Step 5. Create Database**
-    Open Robo 3T and make a connection with database. Copy the 
+```
+git clone https://github.com/ghulamghousdev/CS311S20PID32.git
+```
 
+**Step 2. Open in Code Editor:**
+To open folder in Visual Studio Code, right click on the folder and click on open with
+Visual Studio Code.
+
+**Step 3. Backend Dev Dependencies:**
+To install all the development dependencies for backend, execute the following commands
+the terminal.
+
+```
+cd backend
+npm install
+```
+
+**Step 5. Run Database:**
+You have to set the database path in your package.json file. You need to replace the
+mongod script in scripts in package.json with the following line.
+
+```
+  "mongod": "c:/Users/{account username}/mongodb/bin/mongod.exe --dbpath c:/Users/{account username}/mongodb-data"
+
+  For example if your account username is Ghous then the script will be like:
+   "mongod": "c:/Users/Ghous/mongodb/bin/mongod.exe --dbpath c:/Users/Ghous/mongodb-data"
+```
+
+After doing this you need to run the following command on your terminal.
+
+```
+  npm run mongod
+```
+
+**Step 5. Create Database:**
+Open Robo 3T and create a connection with database. Set the name of connection to scheduly.
+
+**Step 6. Run Backend Server**
 
 ## Found an Issue or any suggestions
 
