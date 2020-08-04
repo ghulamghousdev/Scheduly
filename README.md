@@ -77,9 +77,11 @@ Following are the prerequisits to run this project locally on your machine. If y
 prerequisits installed on your computer, run the following commands on your machine.
 
 - visual studio code
+
 You can install it from the following source by clicking on this [link.](https://code.visualstudio.com/download)
 
 - mongodb
+
 There are two ways to install mongodb locally on your machine.
     1. By downloading the .msi file, you simply have to run it on your machine and it will be installed
     by default on the local device containing operating system. [Click here to download it](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0-signed.msi)
@@ -87,13 +89,16 @@ There are two ways to install mongodb locally on your machine.
     a mongodb_data folder in the same directory. [Click here to download it](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0.zip)
 
 - robo 3T
+
 It is a GUI for local mongodb database. You can download the community version and install it by 
 [clicking here.](https://robomongo.org/download)
 
 - node 
+
 To download and install the node on your machine [click here.](https://nodejs.org/en/download/)
 
 - npm
+
 You can install node package manager by running the following command on power shell. 
 ```
 npm install npm@latest -g
