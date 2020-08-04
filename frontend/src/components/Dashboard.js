@@ -27,31 +27,103 @@ function Dashboard(props) {
         <div className="sidebar">
           <img className="logo" src={Logo} alt="Logo" />
           <ul className="menu">
-            <li className="menu__li">
+            <li className="menu__li menu__li--class">
               <NavLink
                 className="menu__link menu__link--top"
                 to={`${url}/classes/add`}
               >
                 Classes
               </NavLink>
+              <ul className="submenu submenu--class">
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/classes/add`}
+                  >
+                  Add Class
+                  </NavLink>
+                </li>
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/classes/view`}
+                  >
+                  All Classes
+                  </NavLink>
+                </li>
+              </ul>
             </li>
 
-            <li className="menu__li">
+            <li className="menu__li menu__li--subject">
               <NavLink className="menu__link" to={`${url}/subjects/add`}>
                 Subjects
               </NavLink>
+              <ul className="submenu submenu--subject">
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/subjects/add`}
+                  >
+                  Add Subject
+                  </NavLink>
+                </li>
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/subjects/view`}
+                  >
+                  All Subjects
+                  </NavLink>
+                </li>
+              </ul>
             </li>
 
-            <li className="menu__li">
+            <li className="menu__li menu__li--teacher">
               <NavLink className="menu__link" to={`${url}/teachers/add`}>
                 Teachers
               </NavLink>
+              <ul className="submenu submenu--teacher">
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/teachers/add`}
+                  >
+                  Add Teacher
+                  </NavLink>
+                </li>
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/teachers/view`}
+                  >
+                  All Teachers
+                  </NavLink>
+                </li>
+              </ul>
             </li>
 
-            <li className="menu__li">
+            <li className="menu__li menu__li--slot">
               <NavLink className="menu__link" to={`${url}/slots/add`}>
                 Slots
               </NavLink>
+              <ul className="submenu submenu--slot">
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/slots/add`}
+                  >
+                  Add Slot
+                  </NavLink>
+                </li>
+                <li className="submenu__item">
+                  <NavLink 
+                    className="submenu__link" 
+                    to={`${url}/slots/view`}
+                  >
+                  All Slots
+                  </NavLink>
+                </li>
+              </ul>
             </li>
 
             <li className="menu__li">
