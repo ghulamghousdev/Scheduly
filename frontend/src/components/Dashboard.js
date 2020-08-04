@@ -19,7 +19,7 @@ import SlotList from "./SlotList";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
-function Dashboard() {
+function Dashboard(props) {
   let { path, url } = useRouteMatch();
   return (
     <BrowserRouter>
@@ -77,47 +77,28 @@ function Dashboard() {
           <div className="component-container">
             <Switch>
               <Route path={`${url}/classes/add`}>
-                <AddClass />
+                <AddClass/>
               </Route>
               <Route path={`${url}/subjects/add`}>
-                <AddSubject />
+                <AddSubject/>
               </Route>
               <Route path={`${url}/teachers/add`}>
-                <AddTeacher />
+                <AddTeacher/>
               </Route>
               <Route path={`${url}/slots/add`}>
-                <AddSlots />
+                <AddSlots/>
               </Route>
               <Route path={`${url}/classes/view`}>
-                <ClassList className="N-7" session="2018" section="A" />
+                <ClassList/>
               </Route>
               <Route path={`${url}/subjects/view`}>
-                <SubjectList
-                  subjectCode="CS311"
-                  subjectName="Operating System"
-                  creditHours="3"
-                  contactHours="3"
-                  labs="1"
-                />
+                <SubjectList/>
               </Route>
               <Route path={`${url}/teachers/view`}>
-                <TeacherList
-                  regNumber="CS30"
-                  firstName="Awais"
-                  lastName="Hasan"
-                  workingHours="12"
-                  subjectName="OOP"
-                />
+                <TeacherList/>
               </Route>
               <Route path={`${url}/slots/view`}>
-                <SlotList
-                  slotID="1"
-                  teacherName="Samyan Wahla"
-                  subjectName="Algorithm Analysis"
-                  session="2018"
-                  section="A"
-                  noOfLectures="3"
-                />
+                <SlotList />
               </Route>
             </Switch>
           </div>
