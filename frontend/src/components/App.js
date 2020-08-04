@@ -3,19 +3,25 @@ import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 import UserCredentials from "./User";
 import Dashboard from "./Dashboard";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/user">
-          <UserCredentials />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+  }
+
+  render(){
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route path="/user">
+            <UserCredentials />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
