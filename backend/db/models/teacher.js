@@ -26,7 +26,7 @@ const teacherSchema = mongoose.Schema({
 
   //Defining the working hours property on teacher Schema
   workingHours: {
-    type: String,
+    type: Number,
     required: true,
     trim: true,
     validate(value) {
@@ -37,12 +37,6 @@ const teacherSchema = mongoose.Schema({
         throw new Error("Working hours cannot be more then 18");
       }
     },
-  },
-  //Defining the subjectName property on teacher Schema
-  subjectName: {
-    type: String,
-    required: true,
-    trim: true,
   },
   
   //DEFINING A FOREIGN RELATIONSHIP WITH USER
