@@ -138,28 +138,55 @@ cd backend
 npm install
 ```
 
-**Step 5. Run Database:**
+**Step 5. Run Database Server:**
 You have to set the database path in your package.json file. You need to replace the
 mongod script in scripts in package.json with the following line.
 
 ```
-  "mongod": "c:/Users/{account username}/mongodb/bin/mongod.exe --dbpath c:/Users/{account username}/mongodb-data"
+"mongod": "c:/Users/{account username}/mongodb/bin/mongod.exe --dbpath c:/Users/{account username}/mongodb-data"
 
-  For example if your account username is Ghous then the script will be like:
-   "mongod": "c:/Users/Ghous/mongodb/bin/mongod.exe --dbpath c:/Users/Ghous/mongodb-data"
+For example if your account username is Ghous then the script will be like:
+"mongod": "c:/Users/Ghous/mongodb/bin/mongod.exe --dbpath c:/Users/Ghous/mongodb-data"
 ```
 
-After doing this you need to run the following command on your terminal.
+After doing this you need to open a new terminal and execute the following command.
 
 ```
-  npm run mongod
+npm run mongod
 ```
 
 **Step 5. Create Database:**
 Open Robo 3T and create a connection with database. Set the name of connection to scheduly.
 
-**Step 6. Run Backend Server**
+**Step 6. Install Frontend dev Dependencies:**
+Open new terminal and execute the following command on terminal.
+
+```
+cd frontend
+npm install
+```
+
+**Step 7. Run Backend Server:**
+To run Backend Server, execute the following commands in order.
+
+```
+cd backend
+npm start
+```
+
+**Step 8. Run Frontend Server:**
+To run Frontend Server, execute the following commands in order.
+
+```
+cd frontend
+npm start
+```
+
+**Step 9. Sign in:**
+Once the servers are running, you first need to sign up as the database is empty at the start of the project.
+
+**Wishing you best of luck for the Testing phase Cheers :)**
 
 ## Found an Issue or any suggestions
 
-Make an issue [here](https://github.com/ghulamghousdev/CS311S20PID32/issues/new).
+Create issues [here](https://github.com/ghulamghousdev/CS311S20PID32/issues/new).
