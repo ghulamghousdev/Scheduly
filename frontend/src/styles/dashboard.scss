@@ -14,13 +14,18 @@
 
 .sidebar{
     position: relative;
-    padding: 15px;
+    padding: 0px;
     background-color: #001F34;
     text-align: center;
 }
 
 .menu{
     display: block;
+
+
+    &__li{
+        position: relative;
+    }
 
     &__link{
         display: block;
@@ -46,8 +51,11 @@
         color: #ffffff;
         background-color: #08ACDD;
         margin-top: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
         border-radius: 20px;
         transition: background-color .3s;
+        
 
         &:hover{
             background-color: #18596d;
@@ -99,6 +107,55 @@
         }
     }
 }
+
+
+.submenu{
+    visibility: hidden;
+    opacity: 0;
+    background-color: #001F34;
+    position: absolute;
+    top: 0;
+    right: -90%;
+    width: 90%;
+    z-index: 999;
+
+    &__link{
+        display: block;
+        padding: 14px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 16px;
+        border-bottom: .5px solid #02314C;
+        border-left: 3px solid #08ACDD;
+        transition: background-color .3s;
+
+        &:hover{
+            background-color: #18596d;
+        }
+    }
+}
+
+
+.menu__li--class:hover .submenu--class{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__li--subject:hover .submenu--subject{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__li--teacher:hover .submenu--teacher{
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__li--slot:hover .submenu--slot{
+    visibility: visible;
+    opacity: 1;
+}
+
 
 .right-container{
     display: flex;
