@@ -17,7 +17,7 @@ class AddSubject extends React.Component {
     const contactHours = e.target.elements.contactHours.value;
     const labs = e.target.elements.labs.value;
 
-    const data = {
+    const subject = {
       subjectCode,
       subjectName,
       creditHours,
@@ -32,11 +32,11 @@ class AddSubject extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const body = JSON.stringify(data);
+      const body = JSON.stringify(subject);
       const res = await axios.post('/api/subject', body, config);
       console.log(res);
-    } catch(e){
-      console.log(e);
+    } catch(err){
+      console.log(err);
     }
     
   }
