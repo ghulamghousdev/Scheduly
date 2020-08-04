@@ -1,17 +1,49 @@
 import React from "react";
 import axios from "axios";
 import Subject from "./SubjectListItem";
+import auth from "../utils/auth";
 import "../styles/addform.scss";
 
 class AddSubject extends React.Component {
   constructor() {
     super();
+    this.handleAddSubject = this.handleAddSubject.bind(this);
   }
+  async handleAddSubject(e){
+    e.preventDefault();
+    const subjectCode = e.target.elements.subjectCode.value;
+    const subjectName = e.target.elements.subjectName.value;
+    const creditHours = e.target.elements.creditHours.value;
+    const contactHours = e.target.elements.contactHours.value;
+    const labs = e.target.elements.labs.value;
 
+    const data = {
+      subjectCode,
+      subjectName,
+      creditHours,
+      contactHours,
+      labs
+    }
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const body = JSON.stringify(data);
+      const res = await axios.post('/api/subject', body, config);
+      console.log(res);
+    } catch(e){
+      console.log(e);
+    }
+    
+  }
   render() {
     return (
       <div class="addform">
-        <form>
+        <form onSubmit={this.handleAddSubject}>
           <h1 className="addform__heading">Add Subject</h1>
           <input
             className="addform__input addform__input--full"
