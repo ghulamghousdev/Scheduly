@@ -22,8 +22,8 @@ router.post("/api/class", auth, async (req, res) => {
 //GET ALL THE CLASSES
 router.get("/api/class", auth, async (req, res) => {
   try {
-    await req.user.populate("class").execPopulate();
-    res.status(201).send(req.user.class);
+    await req.user.populate("section").execPopulate();
+    res.status(201).send(req.user.section);
   } catch (err) {
     res.status(400).send(err);
   }
@@ -40,7 +40,7 @@ router.get("/api/class/:id", auth, async (req, res) => {
     if (!section) {
       return res.status(404).send();
     }
-    res.send(subject);
+    res.send(section);
   } catch (error) {
     res.status(502).send();
   }
