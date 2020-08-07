@@ -4,7 +4,7 @@ import "../styles/subjectlistitem.scss";
 function SubjectListItem(props) {
   const handleRemoveSubject = () => {
     //Calling the handler function passed through the props
-    props.remove(props.subjectCode);
+    props.remove(props.itemId);
   };
 
   return (

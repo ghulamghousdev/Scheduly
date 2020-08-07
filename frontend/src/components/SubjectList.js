@@ -40,12 +40,26 @@ class SubjectList extends React.Component {
     }
   }
 
-  handleRemoveSubject(subjectCode) {
-    this.setState((prevState) => ({
-      subjects: prevState.subjects.filter(
-        (cur) => cur.subjectCode !== subjectCode
-      ),
-    }));
+  async handleRemoveSubject(itemId) {
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.delete(`/api/subject/${itemId}`, config);
+      console.log(res.status);
+      this.setState((prevState) => ({
+        subjects: prevState.subjects.filter(
+          (cur) => cur._id !== itemId
+        ),
+      }));
+    } catch(err){
+      console.log(err);
+    }
+    
   }
 
   render() {
@@ -59,6 +73,8 @@ class SubjectList extends React.Component {
             subjectName={cur.subjectName}
             creditHours={cur.creditHours}
             contactHours={cur.contactHours}
+            key={cur.subjectCode}
+            itemId={cur._id}
           />
         ))}
       </div>
