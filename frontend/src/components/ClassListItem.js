@@ -4,7 +4,7 @@ import "../styles/classlistitem.scss";
 function ClassListItem(props) {
   const handleRemoveClass = () => {
     //Calling The handler function passed through the props
-    props.remove(props.classCode);
+    props.remove(props.itemId);
   };
 
   return (

@@ -40,10 +40,23 @@ class ClassList extends React.Component {
     }
   }
 
-  handleRemoveClass(className) {
-    this.setState((prevState) => ({
-      classes: prevState.classes.filter((cur) => cur.className !== className),
-    }));
+  async handleRemoveClass(itemId) {
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.delete(`/api/class/${itemId}`, config);
+      console.log(res.status);
+      this.setState((prevState) => ({
+        classes: prevState.classes.filter((cur) => cur._id !== itemId),
+      }));
+    } catch(err){
+      console.log(err);
+    }
   }
 
   render() {
@@ -56,6 +69,8 @@ class ClassList extends React.Component {
             classCode={cur.className}
             session={cur.session}
             section={cur.section}
+            key={cur.classCode}
+            itemId={cur._id}
           />
         ))}
       </div>
