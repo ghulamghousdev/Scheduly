@@ -1,5 +1,6 @@
 import React from "react";
 import ClassListItem from "./ClassListItem";
+import auth from "../utils/auth";
 import axios from "axios";
 import "../styles/classlist.scss";
 
@@ -7,15 +8,36 @@ class ClassList extends React.Component {
   constructor() {
     super();
     this.handleRemoveClass = this.handleRemoveClass.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.fetchData = this.fetchData.bind(this);
     this.state = {
-      classes: [
-        { className: "N-7", section: "A", session: "2018" },
-        { className: "N-8", section: "B", session: "2018" },
-        { className: "N-9", section: "C", session: "2018" },
-        { className: "N-10", section: "D", session: "2017" },
-        { className: "N-11", section: "E", session: "2017" },
-      ],
+      classes: [],
     };
+  }
+
+  componentDidMount(){
+    this.fetchData();
+  }
+
+  async fetchData(){
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.get('/api/class', config);
+      this.setState((prevState, props)=>{
+        return ({
+          classes: prevState.classes.concat(res.data)
+        })
+      }, ()=>{
+        console.log(this.state);
+      })
+    } catch(err){
+    }
   }
 
   handleRemoveClass(className) {
@@ -26,7 +48,7 @@ class ClassList extends React.Component {
 
   render() {
     return (
-      <div class="viewbox">
+      <div className="viewbox">
         <h1 className="viewbox__heading">All Classes</h1>
         {this.state.classes.map((cur) => (
           <ClassListItem
