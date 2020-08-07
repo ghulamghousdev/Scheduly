@@ -2,9 +2,10 @@ import React, { Children } from "react";
 import "../styles/teacherlistitem.scss";
 
 function TeacherListItem(props) {
+
   const handleRemoveTeacher = () => {
     //Calling The handler function passed through the props
-    props.remove(props.regNumber);
+    props.remove(props.itemId);
   };
 
   return (

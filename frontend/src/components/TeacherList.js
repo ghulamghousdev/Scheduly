@@ -1,5 +1,6 @@
 import React from "react";
 import TeacherListItem from "./TeacherListItem";
+import auth from "../utils/auth";
 import axios from "axios";
 import "../styles/teacherlist.scss";
 
@@ -8,34 +9,61 @@ class TeacherList extends React.Component {
     super();
     this.handleRemoveSubject = this.handleRemoveTeacher.bind(this);
     this.state = {
-      teachers: [
-        {
-          regNumber: "CS30",
-          firstName: "Awais",
-          lastName: "Hasan",
-          workingHours: 12,
-          subjectName: "DBMS",
-        },
-        {
-          regNumber: "CS31",
-          firstName: "Samyan",
-          lastName: "Wahla",
-          workingHours: 12,
-          subjectName: "AOA",
-        },
-      ],
+      teachers: []
     };
   }
 
-  handleRemoveTeacher(regNumber) {
+  
+  componentDidMount(){
+    this.fetchData();
+  }
+
+  async fetchData(){
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.get('/api/teacher', config);
+      this.setState((prevState, props)=>{
+        return ({
+          teachers: prevState.teachers.concat(res.data)
+        })
+      }, ()=>{
+        console.log(this.state);
+      })
+    } catch(err){
+      console.log(err);
+    }
+  }
+
+
+  async handleRemoveTeacher(itemId) {
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.delete(`/api/teacher/${itemId}`, config);
+      console.log(res.status);
+    } catch(err){
+      console.log(err);
+    }
+
     this.setState((prevState) => ({
-      subjects: prevState.teachers.filter((cur) => cur.regNumber !== regNumber),
+      teachers: prevState.teachers.filter((cur) => cur._id !== itemId),
     }));
   }
 
   render() {
     return (
-      <div class="viewbox">
+      <div className="viewbox">
         <h1 className="viewbox__heading">All Teachers</h1>
         {this.state.teachers.map((cur) => (
           <TeacherListItem
@@ -45,6 +73,8 @@ class TeacherList extends React.Component {
             lastName={cur.lastName}
             workingHours={cur.workingHours}
             subjectName={cur.subjectName}
+            key={cur.regNumber}
+            itemId={cur._id}
           />
         ))}
       </div>
