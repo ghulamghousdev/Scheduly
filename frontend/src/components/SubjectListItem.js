@@ -11,8 +11,7 @@ function SubjectListItem(props) {
     <div className="subject">
       <p className="subject__details">
         {props.subjectCode}-{props.subjectName} | Credit Hours:{" "}
-        {props.creditHours} | Contact Hours: {props.contactHours} | Labs:{" "}
-        {props.labs}
+        {props.creditHours} | Contact Hours: {props.contactHours}
       </p>
       <button
         onClick={handleRemoveSubject}
