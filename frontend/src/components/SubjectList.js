@@ -1,5 +1,6 @@
 import React from "react";
 import SubjectListItem from "./SubjectListItem";
+import auth from "../utils/auth";
 import axios from "axios";
 import "../styles/subjectlist.scss";
 
@@ -7,38 +8,36 @@ class SubjectList extends React.Component {
   constructor() {
     super();
     this.handleRemoveSubject = this.handleRemoveSubject.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.fetchData = this.fetchData.bind(this);
     this.state = {
-      subjects: [
-        {
-          subjectCode: "CS311",
-          subjectName: "Operating System",
-          creditHours: 3,
-          contactHours: 3,
-          labs: 1,
-        },
-        {
-          subjectCode: "CS363",
-          subjectName: "Algorithm Analysis",
-          creditHours: 3,
-          contactHours: 3,
-          labs: 0,
-        },
-        {
-          subjectCode: "CS393",
-          subjectName: "DBMS",
-          creditHours: 3,
-          contactHours: 3,
-          labs: 1,
-        },
-        {
-          subjectCode: "CS313",
-          subjectName: "Theory of Automata",
-          creditHours: 3,
-          contactHours: 3,
-          labs: 0,
-        },
-      ],
+      subjects: []
     };
+  }
+
+  componentDidMount(){
+    this.fetchData();
+  }
+
+  async fetchData(){
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.get('/api/subjects', config);
+      this.setState((prevState, props)=>{
+        return ({
+          subjects: prevState.subjects.concat(res.data)
+        })
+      }, ()=>{
+        console.log(this.state);
+      })
+    } catch(err){
+    }
   }
 
   handleRemoveSubject(subjectCode) {
@@ -60,7 +59,6 @@ class SubjectList extends React.Component {
             subjectName={cur.subjectName}
             creditHours={cur.creditHours}
             contactHours={cur.contactHours}
-            labs={cur.labs}
           />
         ))}
       </div>
