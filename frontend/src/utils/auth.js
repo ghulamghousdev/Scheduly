@@ -6,8 +6,12 @@ const auth = {
     },
     getAuthToken: function(authToken){
         return localStorage.getItem("token");
+    },
+    removeAuthToken: function(authToken){
+        if(authToken){
+            localStorage.removeItem("token");
+        }
     }
-    
 }
 
 export default auth;
