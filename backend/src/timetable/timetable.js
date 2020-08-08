@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const { Console } = require("console");
 
 // Function to generate the best possible timetable.
 const ranD = (slots, count) => {
@@ -15,8 +16,6 @@ const ranD = (slots, count) => {
   let buff = crypto.randomBytes(2);
   let n = parseInt(buff.toString("hex"), 16);
 
-  // a(n);
-
   let index = n % viableDays.length;
   let day = viableDays[index];
   let slot = [];
@@ -27,7 +26,6 @@ const ranD = (slots, count) => {
     let s = n % slots[day].length;
     slot.push(slots[day][s]);
     slots[day].splice(s, 1);
-    //delete s;
   }
 
   return { day, slot };
@@ -49,8 +47,7 @@ const generateTimeTable = async (
   givenSlots.forEach((x) => {
     if (x > 0) numDays++;
   });
-  //console.log("sections ", sections);
-  //console.log("numDays ", numDays);
+
   for (i in sections) {
     let mapp = givenSlots.map((x) => {
       z = [];
@@ -60,9 +57,8 @@ const generateTimeTable = async (
       return z;
     });
     secInstances[sections[i]] = [];
-    //  a(secInstances[sections[i]]);
+
     classTimeTable[sections[i]] = mapp;
-    // a(classTimeTable[sections[i]]);
     delete mapp, j;
   }
   for (i in teachers) {
@@ -75,18 +71,14 @@ const generateTimeTable = async (
     });
 
     teacherTimeTable[teachers[i]] = mapp;
-    // a(teacherTimeTable[teachers[i]]);
     delete mapp, j;
   }
-  let a = 0;
-  let b = 0;
   for (i in sections) {
     for (j in slotSubjTeacInstance) {
       for (let k in slotSubjTeacInstance[j].sections) {
         if (slotSubjTeacInstance[j].sections[k] == sections[i]) {
           slotSubjTeacInstance[j]["mapp"] = [];
           secInstances[sections[i]].push(slotSubjTeacInstance[j]);
-          //a(secInstances[0]);
         }
       }
     }
@@ -113,14 +105,12 @@ const generateTimeTable = async (
       }
       return z;
     });
-    //  console.log("inProcessTimeTable ", typeof inProcessTimeTable, inProcessTimeTable);
 
     let regenerateCountSI = 0;
     let regenerateFlagSI = false;
     let regenerateListSI = {};
     for (j = 0; j < secInstances[sections[i]].length; j++) {
       a++;
-      // console.log("hey", "i \t", i, "j \t", j);
       let availSlots = [];
       for (day = 0; day < givenSlots.length; day++) {
         //In this case number length of slots will b equal to number of days
@@ -190,16 +180,11 @@ const generateTimeTable = async (
         }
         availSlots.push(daySlots);
       }
-
-      // console.log("INFO", sections[i], j, "avai\t", availSlots);
       //calculating number of lec that can be divided into working days
       let eachDay = Math.floor(
         secInstances[sections[i]][j].numLectures / numDays
       );
       let extraDays = secInstances[sections[i]][j].numLectures % numDays;
-
-      //console.log("extra days ", numDays);
-
       for (let x = 0; x < numDays; x++) {
         let count;
         if (extraDays > 0) {
@@ -211,11 +196,7 @@ const generateTimeTable = async (
         let flag = true;
         let radCount = 0;
         while (flag) {
-          //console.log("call after red count ", availSlots, count);
           const ret = ranD(availSlots, count);
-          // console.log("ret", ret);
-          // console.log(count);
-          // console.log("timeTable", inProcessTimeTable);
           if (
             ret != undefined &&
             ret != null &&
@@ -240,10 +221,8 @@ const generateTimeTable = async (
             flag = false;
           } else {
             if (radCount < 10) {
-              //console.log("rad", radCount, j);
               radCount++;
             } else if (regenerateCountSI < 100) {
-              //For regenration of timeTable setimeTableing timeTable eqauls to empty
               regenerateSI = true;
               regenerateCountSI++;
               flag = false;
@@ -253,14 +232,6 @@ const generateTimeTable = async (
               } else {
                 regenerateListSI = secInstances[sections[i]][j].mapp[0];
               }
-
-              // console.log(
-              //   "regSI",
-              //   regenerateCountSI,
-              //   regenerateCountSI,
-              //   regenerateListSI
-              // );
-              //console.log("hey", "i \t", i, "j \t", j);
               for (let y in secInstances[sections[i]][j].mapp) {
                 for (let w in secInstances[sections[i]][j].mapp.slot) {
                   b++;
@@ -277,7 +248,6 @@ const generateTimeTable = async (
             } else {
               if (regenerateCountSec < 100) {
                 b++;
-                //console.log("regenerateCountSec",regenerateCountSI, regenerateCountSec)
                 regenerateCountSI = 0;
                 regenerateSec = true;
                 regenerateCountSec++;
@@ -351,8 +321,6 @@ const generateTimeTable = async (
                       }
                     }
                   }
-
-                  //console.log("not" , " ", i, " ", j)
                 } else {
                   impossible = true;
                   flag = false;
@@ -368,15 +336,11 @@ const generateTimeTable = async (
           regenerateFlagSec ||
           regenerateFlagSI
         ) {
-          // console.log("break1", i, j);
-          a++;
-          // console.log(a);
           break;
         }
       } // numDays
 
       if (impossible || notPossible || regenerateFlagSec) {
-        //console.log("break2", i, j);
         break;
       }
     } // j
@@ -393,7 +357,6 @@ const generateTimeTable = async (
       break;
     }
   }
-
   return timeTable;
 };
 
