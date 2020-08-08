@@ -1,5 +1,6 @@
 import React from "react";
 import SlotListItem from "./SlotListItem";
+import auth from "../utils/auth"
 import axios from "axios";
 import "../styles/slotslist.scss";
 
@@ -8,31 +9,54 @@ class SlotList extends React.Component {
     super();
     this.handleRemoveSlot = this.handleRemoveSlot.bind(this);
     this.state = {
-      slots: [
-        {
-          slotID: 1,
-          teacherName: "Samyan Wahla",
-          subjectName: "Algorithm Analysis",
-          session: 2018,
-          section: "B",
-          noOfLectures: 3,
-        },
-        {
-          slotID: 2,
-          teacherName: "Awais Hasan",
-          subjectName: "DBMS",
-          session: 2018,
-          section: "A",
-          noOfLectures: 3,
-        },
-      ],
+      slots: []
     };
   }
 
-  handleRemoveSlot(slotID) {
-    this.setState((prevState) => ({
-      slots: prevState.slots.filter((cur) => cur.slotID !== slotID),
-    }));
+  componentDidMount(){
+    this.fetchData();
+  }
+
+  async fetchData(){
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.get('/api/slots', config);
+      console.log(res);
+      this.setState((prevState, props)=>{
+        return ({
+          slots: prevState.slots.concat(res.data)
+        })
+      }, ()=>{
+        //console.log(this.state);
+      })
+    } catch(err){
+    }
+  }
+
+  async handleRemoveSlot(itemId) {
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const res = await axios.delete(`/api/slots/${itemId}`, config);
+      console.log(res.status);
+      this.setState((prevState) => ({
+        slots: prevState.slots.filter((cur) => cur._id !== itemId),
+      }));
+    } catch(err){
+      console.log(err);
+    }
+    
   }
 
   render() {
@@ -42,12 +66,12 @@ class SlotList extends React.Component {
         {this.state.slots.map((cur) => (
           <SlotListItem
             remove={this.handleRemoveSlot}
-            slotID={cur.slotID}
             teacherName={cur.teacherName}
             subjectName={cur.subjectName}
             session={cur.session}
             section={cur.section}
-            noOfLectures={cur.noOfLectures}
+            contactHours={cur.contactHours}
+            itemId={cur._id}
           />
         ))}
       </div>
