@@ -49,22 +49,9 @@ const addSlotsSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "User",
-  },
-
-  //DEFINING A FOREIGN RELATIONSHIP WITH SUBJECT
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Subject",
-  },
-  //DEFINING A FOREIGN RELATIONSHIP WITH TEACHER
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Teacher",
-  },
+  }
 });
 
-const AddSlots = mongoose.model("AddSlots", addSlotsSchema);
+const Slots = mongoose.model("Slots", addSlotsSchema);
 
-module.exports = AddSlots;
+module.exports = Slots;

@@ -81,6 +81,12 @@ userSchema.virtual("teacher", {
   foreignField: "author",
 });
 
+userSchema.virtual("slots", {
+  ref: "Slots",
+  localField: "_id",
+  foreignField: "author",
+});
+
 //GENERATING AUTHORIZATION TOKEN AND STORING IT IN TOKENS PROPERTY OF USER OBJECT
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
