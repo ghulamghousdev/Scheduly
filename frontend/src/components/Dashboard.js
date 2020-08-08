@@ -8,6 +8,7 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
+import axios from "axios"
 import AddClass from "./AddClass";
 import AddSubject from "./AddSubject";
 import AddTeacher from "./AddTeacher";
@@ -16,11 +17,32 @@ import ClassList from "./ClassList";
 import SubjectList from "./SubjectList";
 import TeacherList from "./TeacherList";
 import SlotList from "./SlotList";
+import TimeTable from "./TimeTable";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
+import auth from "../utils/auth";
 
 function Dashboard(props) {
   let { path, url } = useRouteMatch();
+
+  const handleLogout = async ()=>{
+
+    try{
+      const authToken = auth.getAuthToken();
+      const config = {
+        headers: {
+            'Content-Type': 'Application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+      }
+      const body = JSON.stringify({});
+      const res = await axios.post('/api/user/logout',body, config);
+      console.log(res);
+      auth.removeAuthToken(authToken);
+    } catch(err){
+    }
+
+  }
   return (
     <BrowserRouter>
       <div className="dashboard row-2-1-5">
@@ -127,7 +149,7 @@ function Dashboard(props) {
             </li>
 
             <li className="menu__li">
-              <NavLink to="/" className="menu__btn">
+              <NavLink to={`${url}/timetable`} className="menu__btn">
                 Generate
               </NavLink>
             </li>
@@ -142,7 +164,7 @@ function Dashboard(props) {
                 </Link>
               </li>
               <li>
-                <button className="secondary-menu__btn">Logout</button>
+                <button onClick={handleLogout} className="secondary-menu__btn">Logout</button>
               </li>
             </ul>
           </div>
@@ -171,6 +193,9 @@ function Dashboard(props) {
               </Route>
               <Route path={`${url}/slots/view`}>
                 <SlotList />
+              </Route>
+              <Route path={`${url}/timetable`}>
+                <TimeTable />
               </Route>
             </Switch>
           </div>
