@@ -13,15 +13,15 @@ router.get("/api/fetchdata", auth, async (req, res) => {
   let teacherArray = [];
   let slotsArray = [];
   let givenSlots = [7, 7, 7, 7, 4];
-  console.log("ddd");
+
   try {
     let sectionData = await Section.find({ author: req.user._id });
     let subjectData = await Subject.find({ author: req.user._id });
     let teacherData = await Teacher.find({ author: req.user._id });
     let slotsData = await Slots.find({ author: req.user._id });
-    console.log("WER");
+
     for (let i = 0; i < sectionData.length; i++) {
-      sectionArray[i] = `${sectionData[i].section}-${sectionData[i].session}`;
+      sectionArray[i] = `${sectionData[i].session}-${sectionData[i].section}`;
     }
 
     for (let i = 0; i < subjectData.length; i++) {
