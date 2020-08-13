@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 import UserCredentials from "./User";
 import Dashboard from "./Dashboard";
+import HomePage from "./HomePage";
 
 class App extends React.Component {
   constructor(){
@@ -17,6 +18,9 @@ class App extends React.Component {
           </Route>
           <Route path="/dashboard">
             <Dashboard/>
+          </Route>
+          <Route path="/">
+            <HomePage />
           </Route>
         </Switch>
       </BrowserRouter>
