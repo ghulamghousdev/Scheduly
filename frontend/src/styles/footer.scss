@@ -1,0 +1,18 @@
+.footer{
+    background-color: rgb( 0, 31, 52);
+    padding: 15px;
+}
+
+.credits{
+    color: #ffffff;
+    margin-left: 40px;
+
+    &__link{
+        color: #08ACDD;
+        transition: color .3s;
+
+        &:hover{
+            color: #18596d;
+        }
+    }
+}
