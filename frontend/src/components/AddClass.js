@@ -11,11 +11,13 @@ class AddClass extends React.Component {
   }
 
   async handleAddClass(e) {
+    //Preventing default event handeling
     e.preventDefault();
+    // Calling event.persist() so that our event still exist after the HTTP request
+    e.persist();
     const className = e.target.elements.className.value;
     const session = e.target.elements.session.value;
     const section = e.target.elements.section.value;
-    console.log(session);
     const classDetails = {
       className,
       session,
@@ -33,6 +35,11 @@ class AddClass extends React.Component {
       const body = JSON.stringify(classDetails);
       const res = await axios.post("/api/class", body, config);
       console.log(res.data);
+
+      e.target.elements.className.value = '';
+      e.target.elements.session.value = '';
+      e.target.elements.section.value = '';
+
     } catch (err) {
       console.log(err);
     }
