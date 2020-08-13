@@ -33,6 +33,7 @@ class AddTeacher extends React.Component {
 
   async handleAddTeacher(e){
     e.preventDefault();
+    e.persist();
     const firstName = e.target.elements.firstName.value;
     const lastName = e.target.elements.lastName.value;
     const regNumber = e.target.elements.regNumber.value;
@@ -56,6 +57,11 @@ class AddTeacher extends React.Component {
       const body = JSON.stringify(teacher);
       const res = await axios.post('/api/teacher', body, config);
       console.log(res);
+      e.target.elements.firstName.value = '';
+      e.target.elements.lastName.value = '';
+      e.target.elements.regNumber.value = '';
+      e.target.elements.workingHours.value = '';
+
     } catch(err){
       console.log(err);
     }
