@@ -11,6 +11,7 @@ class AddSlots extends React.Component {
 
   async handleAddSlots(e){
     e.preventDefault();
+    e.persist();
     const teacherName = e.target.elements.teacherName.value;
     const session = e.target.elements.session.value;
     const section = e.target.elements.section.value;
@@ -36,6 +37,14 @@ class AddSlots extends React.Component {
         const body = JSON.stringify(slotDetails);
         const res = await axios.post('/api/slot ', body, config);
         console.log(res.data);
+
+        e.target.elements.teacherName.value = '';
+        e.target.elements.session.value = '';
+        e.target.elements.section.value = '';
+        e.target.elements.subjectName.value = '';
+        e.target.elements.contactHours.value = '';
+
+
     } catch (err){
         console.log(err);
     }
