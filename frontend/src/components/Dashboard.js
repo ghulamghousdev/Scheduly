@@ -18,6 +18,7 @@ import SubjectList from "./SubjectList";
 import TeacherList from "./TeacherList";
 import SlotList from "./SlotList";
 import TimeTable from "./TimeTable";
+import OperateManual from "./OperateManual";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 import auth from "../utils/auth";
@@ -204,6 +205,9 @@ function Dashboard(props) {
               </Route>
               <Route path={`${url}/timetable`}>
                 <TimeTable />
+              </Route>
+              <Route path={`${url}/`}>
+                <OperateManual />
               </Route>
             </Switch>
           </div>
