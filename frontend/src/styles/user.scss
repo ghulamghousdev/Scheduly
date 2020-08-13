@@ -11,11 +11,14 @@
     position: relative;
 }
 
+.col{
+    position: relative;
+}
+
 .form-image{
     width: 70%; 
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    
 }
