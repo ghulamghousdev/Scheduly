@@ -11,6 +11,7 @@ class AddSubject extends React.Component {
   }
   async handleAddSubject(e){
     e.preventDefault();
+    e.persist();
     const subjectCode = e.target.elements.subjectCode.value;
     const subjectName = e.target.elements.subjectName.value;
     const creditHours = e.target.elements.creditHours.value;
@@ -35,6 +36,13 @@ class AddSubject extends React.Component {
       const body = JSON.stringify(subject);
       const res = await axios.post('/api/subject', body, config);
       console.log(res);
+
+      e.target.elements.subjectCode.value = '';
+      e.target.elements.subjectName.value = '';
+      e.target.elements.creditHours.value = '';
+      e.target.elements.contactHours.value = '';
+      e.target.elements.labs.value = '';
+
     } catch(err){
       console.log(err);
     }
