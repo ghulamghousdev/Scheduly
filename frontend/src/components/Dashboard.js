@@ -38,11 +38,21 @@ function Dashboard(props) {
       const body = JSON.stringify({});
       const res = await axios.post('/api/user/logout',body, config);
       console.log(res);
-      auth.removeAuthToken(authToken);
+      if(res.status === 200){
+        auth.removeAuthToken(authToken);
+        window.location.href = '/user';
+      }
+      
     } catch(err){
     }
 
   }
+  
+  const handleHomeRedirect = ()=>{
+    console.log("hello World");
+    window.location.href= '/';
+  }
+
   return (
     <BrowserRouter>
       <div className="dashboard row-2-1-5">
@@ -159,9 +169,7 @@ function Dashboard(props) {
           <div className="secondary-menubar">
             <ul className="secondary-menu">
               <li>
-                <Link className="secondary-menu__link" exact to="/">
-                  Home
-                </Link>
+                <button onClick={handleHomeRedirect} className="secondary-menu__link">Home</button>
               </li>
               <li>
                 <button onClick={handleLogout} className="secondary-menu__btn">Logout</button>
