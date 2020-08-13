@@ -1,0 +1,51 @@
+.step-container{
+    margin-bottom: 40px;
+}
+
+.step{
+    display: flex;
+
+    &__number{
+        height: 50px;
+        width: 50px;
+        min-width: 50px;
+        font-size: 20px;
+        border: 2px solid #08ACDD;
+        color: #08ACDD;
+        position: relative;
+        margin-right: 30px;
+        background-color: #ffffff;
+
+        &::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 300%;
+            background-color:#08ACDD;
+            z-index: -1;
+        }
+
+        &>span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    &__instruction{
+        &__heading{
+            font-size: 20px;
+            color: #555555;
+        }
+    }
+
+}
+
+
+.step--last .step__number::before{
+    height: 0px;
+}
