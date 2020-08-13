@@ -4,6 +4,7 @@ import Background from "../home-background.png";
 import "../styles/homepage.scss";
 import Textbox from "./Textbox";
 import Logo from "../logo.svg";
+import Footer from "./Footer";
 import OperateManual from "./OperateManual";
 
 const HomePage = (props)=>{
@@ -33,9 +34,21 @@ const HomePage = (props)=>{
                 </div>
             </section>
             <section className="manual">
+                <div className="home-row fw-row col-2-1-2">
+                    <div className="col">
+                        <div className="textbox--guide">
+                            <h2 className="textbox__preHeading--blue">User Guide</h2>
+                            <h1 className="textbox__heading--dark">Follow the described steps</h1>
+                        </div>
                 
-                <OperateManual />
+                    </div>
+                    <div className="col">
+                        <OperateManual/>
+                    </div>
+
+                </div>                
             </section>
+            <Footer />
         </div>
     )
 }
