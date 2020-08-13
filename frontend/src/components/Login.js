@@ -24,6 +24,9 @@ class Login extends React.Component {
             const body = JSON.stringify(credentials);
             const res = await axios.post('/api/user/login', body, config);
             auth.setAuthToken(res.data.token);
+            if(res.data.token){
+                window.location.href="/dashboard";
+            }
             
         } catch(e){
             console.log(e);
