@@ -8,7 +8,7 @@ If someone is using this application for the very first time, he/she needs to re
 
 Let's assume we have a new user. The input fields for the user will be filled like.
 
-![Sign Up](../media/signup.jpg)
+![Sign Up](./media/signup.JPG)
 
 ## Login
 
@@ -16,7 +16,7 @@ In this step user need to click on the login button and then fill the input boxe
 
 Following screen shows how to fill it.
 
-![Log in](/media/login.jpg)
+![Log in](/media/login.JPG)
 
 ## Add Class
 
