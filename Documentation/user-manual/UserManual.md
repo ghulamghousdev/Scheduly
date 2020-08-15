@@ -16,7 +16,7 @@ In this step user need to click on the login button and then fill the input boxe
 
 Following screen shows how to fill it.
 
-![Log in](/media/login.JPG)
+![Log in](./media/login.JPG)
 
 ## Add Class
 
@@ -24,7 +24,7 @@ After logging in, user need to click on AddClass from left navigation panel to a
 
 For example:
 
-![Sign Up](/media/AddClass.jpg)
+![Sign Up](./media/AddClass.JPG)
 
 ## Add Subjects
 
@@ -32,7 +32,7 @@ After clicking on AddSubjects and user will be lead to screen where he can add a
 
 For example:
 
-![Sign Up](/media/AddSubject.jpg)
+![Sign Up](./media/AddSubject.JPG)
 
 ## Add Teachers
 
@@ -40,7 +40,7 @@ To go to add teachers page for adding a new teacher, user need to click on AddTe
 
 For example:
 
-![Sign Up](/media/AddTeacher.jpg)
+![Sign Up](./media/AddTeacher.JPG)
 
 ## Add Slots
 
@@ -50,8 +50,8 @@ To go to add slot page, for adding a new slot, user need to click on Slots from 
 
 For example:
 
-![Sign Up](/media/AddSlots.jpg)
+![Sign Up](./media/AddSlots.JPG)
 
 After adding all of these records, user need to click on the generate table to get the time table. The time table will be shown in the form of table i.e.
 
-![Sign Up](/media/timetable.jpg)
+![Sign Up](./media/timetable.JPG)
