@@ -8,7 +8,7 @@ If someone is using this application for the very first time, he/she needs to re
 
 Let's assume we have a new user. The input fields for the user will be filled like.
 
-![Sign Up](/media/signup.jpg)
+![Sign Up](../media/signup.jpg)
 
 ## Login
 
