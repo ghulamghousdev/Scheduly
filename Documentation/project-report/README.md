@@ -289,7 +289,7 @@ Heroku.
 - Confirm Password: A user should fill this input box by re writing his/her password.
 - Sign Up Button (Right below input boxes): This button is used to submit the credentials.
 
-  ![Sign up](./Interfaces/Signup.JPG)
+  ![Sign up](./Interfaces/SignUp.JPG)
 
 3. Log In<br>
    This page consists of two input boxes and a login button. If the credentials are correct, you will
@@ -301,7 +301,7 @@ Heroku.
 - Login button: By clicking on this button user will be directed to the dashboard if the
   credentials are turned out to be true.
 
-  ![Log In](./Interfaces/Signin.JPG)
+  ![Log In](./Interfaces/SignIn.JPG)
 
 4. Dashboard<br>
    This page will be shown after a user successfully login to the application. It consists of a header
@@ -412,7 +412,7 @@ Heroku.
     navigation panel on left and select all slots from sub menu. It has only one button named as
     Remove which will remove an instance of a slot.
 
-    ![View All Slots](./interfaces/ViewSlots.JPG)
+    ![View All Slots](./Interfaces/ViewSlots.JPG)
 
 13. Timetable<br>
     By clicking on the Generate Button from navigation panel on left, you will see the generated time
@@ -420,7 +420,7 @@ Heroku.
     class. Each row will represent a working day and each slot will represent a time slot. In each cell
     we will show the assigned teacher name and assigned subject name.
 
-    ![timetable](./Interfaces/output.JPG)
+    ![timetable](./Interfaces/Output.JPG)
 
 ## <b>Integration</b>
 
