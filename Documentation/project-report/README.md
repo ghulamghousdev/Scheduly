@@ -273,7 +273,7 @@ Heroku.
    - Sign up: A user should use this to register himself/herself.
    - Login: A user should use this to login in to system.
 
-   ![Welcome Page](./interfaces/Home.JPG)
+   ![Welcome Page](./Interfaces/Home.JPG)
 
 2. Sign up<br>
    Whenever a new user wants to use this system, he must register. Sign up page consists of 5
@@ -289,7 +289,7 @@ Heroku.
 - Confirm Password: A user should fill this input box by re writing his/her password.
 - Sign Up Button (Right below input boxes): This button is used to submit the credentials.
 
-  ![Sign up](./interfaces/Signup.JPG)
+  ![Sign up](./Interfaces/Signup.JPG)
 
 3. Log In<br>
    This page consists of two input boxes and a login button. If the credentials are correct, you will
@@ -301,7 +301,7 @@ Heroku.
 - Login button: By clicking on this button user will be directed to the dashboard if the
   credentials are turned out to be true.
 
-  ![Log In](./interfaces/Signin.JPG)
+  ![Log In](./Interfaces/Signin.JPG)
 
 4. Dashboard<br>
    This page will be shown after a user successfully login to the application. It consists of a header
@@ -327,7 +327,7 @@ Heroku.
 - Generate: This button will send a request to the backend to run algorithm and will show
   the returned output.
 
-  ![Dashboard](./interfaces/Dashboard.JPG)
+  ![Dashboard](./Interfaces/Dashboard.JPG)
 
 5. Add Class<br>
    To add a new class, you need to click on classes in navigation panel and select add from
@@ -339,14 +339,14 @@ Heroku.
 - Section: User need to enter the section of the class.
 - Add Class Button: This button will save the records.
 
-  ![Add Class](./interfaces/AddClass.JPG)
+  ![Add Class](./Interfaces/AddClass.JPG)
 
 6. View All Classes<br>
    This will show all the classes added by a user. You can go to this page by clicking on classes in
    navigation panel and select all classes from sub menu. It has only one button Remove which
    will remove a class.
 
-   ![View Classes](./interfaces/ViewClass.JPG)
+   ![View Classes](./Interfaces/ViewClass.JPG)
 
 7. Add Subject<br>
    To add a new subject, you need to click on click on subjects in navigation panel and select add
@@ -362,14 +362,14 @@ Heroku.
 - Labs: Number of labs assigned to a subject.
 - Add Subject Button: This button will save the records.
 
-  ![Add Subjects](./interfaces/AddSubject.JPG)
+  ![Add Subjects](./Interfaces/AddSubject.JPG)
 
 8. View All Subjects<br>
    This will show all the subjects added by a user. You can go to this page by clicking on subjects
    in navigation panel on left and select all subjects from sub menu. It has only one button Remove
    which will remove a subject.
 
-   ![View Subjects](./interfaces/ViewSubjects.JPG)
+   ![View Subjects](./Interfaces/ViewSubjects.JPG)
 
 9) Add Teacher<br>
    To add a new teacher, you need to click on click on teachers in navigation panel and select add
@@ -384,14 +384,14 @@ Heroku.
 - Working Hours: This will be the working hours of a teacher in a week.
 - Add Teacher Button: This button will save the records.
 
-  ![Add Teachers](./interfaces/AddTeacher.JPG)
+  ![Add Teachers](./Interfaces/AddTeacher.JPG)
 
 10. View All Teachers<br>
     This will show all the teachers added by a user. You can go to this page by clicking on teachers
     in navigation panel on left and select all teachers from sub menu. It has only one button named
     as Remove which will remove a teacher.
 
-    ![View All Teachers](./interfaces/ViewTeacher.JPG)
+    ![View All Teachers](./Interfaces/ViewTeacher.JPG)
 
 11. Add Slots<br>
     To add a new subject, you need to click on click on subjects in navigation panel and select add
@@ -405,7 +405,7 @@ Heroku.
   assigned.
 - Add Slots Button: This button will save the records.
 
-  ![Add Slots](./interfaces/AddSlots.JPG)
+  ![Add Slots](./Interfaces/AddSlots.JPG)
 
 12. View All Slots<br>
     This will show all the slots added by a user. You can go to this page by clicking on slots in
@@ -420,7 +420,7 @@ Heroku.
     class. Each row will represent a working day and each slot will represent a time slot. In each cell
     we will show the assigned teacher name and assigned subject name.
 
-    ![timetable](./interfaces/output.JPG)
+    ![timetable](./Interfaces/output.JPG)
 
 ## <b>Integration</b>
 
