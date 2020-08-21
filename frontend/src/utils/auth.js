@@ -11,7 +11,17 @@ const auth = {
         if(authToken){
             localStorage.removeItem("token");
         }
+    },
+    isAuthenticated: function(){
+        const token = localStorage.getItem("token");
+        if(token){
+            return true;
+        } else {
+            return false;
+        }
     }
+    
+
 }
 
 export default auth;
