@@ -41,7 +41,7 @@ function Dashboard(props) {
       console.log(res);
       if(res.status === 200){
         auth.removeAuthToken(authToken);
-        window.location.href = '/user';
+        window.location.href = '/';
       }
       
     } catch(err){
@@ -169,9 +169,6 @@ function Dashboard(props) {
         <div className="right-container">
           <div className="secondary-menubar">
             <ul className="secondary-menu">
-              <li>
-                <button onClick={handleHomeRedirect} className="secondary-menu__link">Home</button>
-              </li>
               <li>
                 <button onClick={handleLogout} className="secondary-menu__btn">Logout</button>
               </li>
