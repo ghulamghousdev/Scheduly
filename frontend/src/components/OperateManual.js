@@ -4,7 +4,7 @@ import Step from "./Step"
 
 const OperateManual = (props)=>{
     return(
-        <div className="operateManual">
+        <div className="operateManual"  style={{marginTop:30}}>
             <Step 
                 number="1" 
                 heading="Add CLasses"
