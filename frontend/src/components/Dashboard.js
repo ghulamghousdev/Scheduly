@@ -3,9 +3,7 @@ import {
   BrowserRouter,
   Route,
   Switch,
-  Link,
   NavLink,
-  useParams,
   useRouteMatch,
 } from "react-router-dom";
 import axios from "axios"
@@ -45,15 +43,11 @@ function Dashboard(props) {
       }
       
     } catch(err){
+      console.log(err);
     }
 
   }
   
-  const handleHomeRedirect = ()=>{
-    console.log("hello World");
-    window.location.href= '/';
-  }
-
   return (
     <BrowserRouter>
       <div className="dashboard row-2-1-5">
