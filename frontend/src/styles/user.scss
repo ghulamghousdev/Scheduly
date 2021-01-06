@@ -5,7 +5,7 @@
 }
 
 .col-1{
-    background-image: url('../blue-background.jpg');
+    background-image: url('../assets/blue-background.jpg');
     background-size: cover;
     padding: 0px 100px;
     position: relative;
@@ -16,7 +16,8 @@
 }
 
 .form-image{
-    width: 70%; 
+    width: 60%; 
+    height:50%;
     position: absolute;
     bottom: 0;
     left: 50%;
