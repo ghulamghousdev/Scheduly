@@ -1,9 +1,6 @@
 import React from "react";
 import auth from "../utils/auth";
-import Background from "../home-background.png";
 import "../styles/homepage.scss";
-import Textbox from "./Textbox";
-import Logo from "../logo.svg";
 import Footer from "./Footer";
 import OperateManual from "./OperateManual";
 
@@ -39,7 +36,7 @@ class HomePage extends React.Component{
                                 <h2 className="textbox__preHeading--blue">Welcome to</h2>
                                 <h1 className="textbox__heading--dark">Scheduly</h1>
                                 <p>This app can be used to generate an automatically scheduled time table. Now get rid of all the manual labour of hit and trial method for generating time table</p>
-                                <a href="#" className="about-btn">About</a>
+                                <a href="./about" className="about-btn">About</a>
                             </div>
                         </div>
                         <div className="col">
