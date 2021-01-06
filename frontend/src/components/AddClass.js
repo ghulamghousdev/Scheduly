@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Class from "./ClassListItem";
 import auth from "../utils/auth";
 import "../styles/addform.scss";
 
