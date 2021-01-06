@@ -1,18 +1,22 @@
 {
-  "name": "user-rest-api",
+  "name": "scheduly",
   "version": "1.0.0",
-  "description": "",
+  "description": "The goal of the software application is to provide a possible timetable solution with the minimum number of clashes between slots. It relieves the user of much of the hard work required for generating timetable manually, leaving him with more time to apply the skills and judgment where they are needed in order to produce a timetable of the highest quality.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "mongod": "c:/Users/Ahmad/mongodb/bin/mongod.exe --dbpath c:/Users/Ahmad/mongodb-data"
+    "client": "cd ../frontend && npm install",
+    "frontend": "cd ../frontend && npm run start",
+    "client-build": "cd ../frontend && npm run build",
+    "heroku-postbuild": "npm run client && npm run client-build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.0",
