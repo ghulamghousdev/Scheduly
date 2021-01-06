@@ -1,16 +1,12 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link, NavLink, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 import UserCredentials from "./User";
 import Dashboard from "./Dashboard";
 import HomePage from "./HomePage";
-import auth from "../utils/auth";
+import Footer from "./Footer";
 import PrivateRoute from './PrivateRoute';
 
 class App extends React.Component {
-  constructor(){
-    super();
-  }
-
   render(){
     return (
       <BrowserRouter>
@@ -25,6 +21,7 @@ class App extends React.Component {
             <HomePage />
           </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }
