@@ -7,9 +7,14 @@ An automated Time-Table Generator.
 - [Ghulam Ghous](https://github.com/ghulamghousdev)
 - [Ahmad Zaheer](https://github.com/ahmadzaheer-dev)
 
-## Project Instructor
-
-- [Prof. Samyan Wahla](https://github.com/samyanuet)
+## Table of Contents
+- [README File](https://github.com/ghulamghousdev/Scheduly/blob/master/README.md)
+- [Features](https://github.com/ghulamghousdev/Scheduly/blob/master/Documentation/features-and-constraints/FeaturesAndConstraints.md)
+- [Pseudo Code](https://github.com/ghulamghousdev/Scheduly/blob/master/Documentation/pseudo-code/Pseudo.md)
+- [Correctness Of Algorithm](https://github.com/ghulamghousdev/Scheduly/blob/master/Documentation/correctness-of-algorithm/correctness-of-algorithm.md)
+- [Complexity Analysis](https://github.com/ghulamghousdev/Scheduly/blob/master/Documentation/complexity-analysis/Complexity%20Analysis.md)
+- [User Manual](https://github.com/ghulamghousdev/Scheduly/blob/master/Documentation/user-manual/UserManual.md)
+- [Project Report](https://github.com/ghulamghousdev/Scheduly/blob/master/Documentation/project-report/README.md)
 
 ## Concept
 
