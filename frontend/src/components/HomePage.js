@@ -1,7 +1,6 @@
 import React from "react";
 import auth from "../utils/auth";
 import "../styles/homepage.scss";
-import Footer from "./Footer";
 import OperateManual from "./OperateManual";
 
 class HomePage extends React.Component{
@@ -58,11 +57,9 @@ class HomePage extends React.Component{
     
                     </div>                
                 </section>
-                <Footer />
             </div>
         )
     }
-    
 }
 
 export default HomePage;
