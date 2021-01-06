@@ -1,12 +1,12 @@
 import React from "react";
-import {BrowserRouter, Route, Switch, Link, NavLink, useParams, useRouteMatch} from "react-router-dom";
+import {Route, Switch, NavLink, useRouteMatch} from "react-router-dom";
 import TextBox from './Textbox';
 import SignUp from './Signup';
 import Login from './Login';
 import '../styles/buttonbox.scss';
 import '../styles/user.scss';
-import Clock from '../clock-illustration.png';
-import Graduate from '../graduate-illustration.png';
+import Clock from '../assets/clock-illustration.png';
+import Graduate from '../assets/graduate-illustration.png';
 
 function UserCredentials() {
     let { path, url } = useRouteMatch();
@@ -14,7 +14,7 @@ function UserCredentials() {
       <div className="fp-container">
         <div className="row fw-row col-2-2-1">
           <div className="col-1">
-            <TextBox 
+            <TextBox  
               preHeading="Welcome To"
               heading="Scheduly"
               text="This app can be used to generate an automatically scheduled time table. Now get rid of all the manual labour of hit and trial method for generating time table"

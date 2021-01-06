@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import auth from "../utils/auth";
-import { Table ,TableHead, TableBody, TableRow, TableCell } from '@material-ui/core';
+import { Table , TableBody, TableRow, TableCell } from '@material-ui/core';
 import "../styles/timetable.scss";
 
 
