@@ -41,7 +41,6 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 
 ## Technologies Used
 
-- MERN Stack
 - SASS
 - React
 - Redux
@@ -49,7 +48,7 @@ All the hard constraints are dealt with by using **Constraint-based Programming*
 - Node.js
 - Express.js
 
-## Technologies used in Project with the respective versions
+## Technologies and Tools used in Project with the respective versions
 
 ### IDE
 
